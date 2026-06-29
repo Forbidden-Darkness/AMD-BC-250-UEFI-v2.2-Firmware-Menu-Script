@@ -26,7 +26,7 @@ if "%1" == "06" then
   goto SORIGINAL
 endif
 if "%1" == "07" then
-  goto AMD
+  goto ASROCK
 endif
 if "%1" == "0f" then
   goto FIRMWARE
@@ -55,7 +55,7 @@ echo " 03. Bazzite Pride Logo            "
 echo " 04. CachyOS Logo            "
 echo " 05. Steam Sugary Logo            "
 echo " 06. Steam Original Logo            "
-echo " 07. AMD Logo            "
+echo " 07. ASRock Logo            "
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
 echo " 0e. Exit to Bios            "
 echo " 0r. Reboot            "
@@ -179,20 +179,20 @@ if exist fs1:\AfuEfix64.efi then
 endif
 goto drive_error
 
-:AMD
+:ASROCK
 cls
 echo " ************************************************"
 echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to AMD Logo 600x600            **"
+echo " **     Welcome to ASRock Logo 800x600            **"
 echo " ************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bc250-amd.rom /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\asrock-800x600.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bc250-amd.rom /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\asrock-800x600.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
