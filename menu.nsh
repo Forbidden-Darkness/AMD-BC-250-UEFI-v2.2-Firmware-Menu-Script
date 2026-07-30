@@ -16,6 +16,9 @@ endif
 if "%1" == "03" then
   goto MeiMeiDXE-Steam
 endif
+if "%1" == "04" then
+  goto MeiMeiDXE-CachyOS
+endif
 if "%1" == "0f" then
   goto FIRMWARE
 endif
@@ -40,6 +43,7 @@ echo "==========================================================================
 echo " 01. MeiMeiDXE - No Logo with Permanent 8 Cores unlocked           "
 echo " 02. MeiMeiDXE - Bazzite Logo with Permanent 8 Cores unlocked            "
 echo " 03. MeiMeiDXE - Steam Logo with Permanent 8 Cores unlocked            "
+echo " 04. MeiMeiDXE - CachyOS Logo with Permanent 8 Cores unlocked            "
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
 echo " 0e. Exit to Bios            "
 echo " 0r. Reboot            "
@@ -51,10 +55,10 @@ goto end_menu
 
 :MeiMeiDXE
 cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to MeiMeiDXE 8 Cores unlocked  **"
-echo " ************************************************"
+echo " ***********************************************************"
+echo " ** 	(WARNING) Flash Firmware at your own RISK! 	**"
+echo " **     Welcome to MeiMeiDXE-No Logo 8 Cores unlocked  	**"
+echo " ***********************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
   fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE.ROM /P /N /B /K /RLC:E
@@ -101,6 +105,25 @@ if exist fs0:\AfuEfix64.efi then
 endif
 if exist fs1:\AfuEfix64.efi then
   fs1:\AfuEfix64.efi fs1:\Firmware\bc250_3.00_meimeidxe-steam.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-CachyOS
+cls
+echo " *****************************************************************"
+echo " **        (WARNING) Flash Firmware at your own RISK!	      **"
+echo " **     Welcome to MeiMeiDXE-CachyOS Logo 8 Cores unlocked      **"
+echo " *****************************************************************"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\bc250_3.00_meimeidxe-cachyos.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\bc250_3.00_meimeidxe-cachyos.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
