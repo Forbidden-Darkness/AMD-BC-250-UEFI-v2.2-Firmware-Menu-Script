@@ -34,6 +34,9 @@ endif
 if "%1" == "09" then
   goto MeiMeiDXE
 endif
+if "%1" == "10" then
+  goto MeiMeiDXE-Bazzite
+endif
 if "%1" == "0f" then
   goto FIRMWARE
 endif
@@ -63,7 +66,8 @@ echo " 05. Steam Sugary Logo            "
 echo " 06. ASRock White Logo            "
 echo " 07. ASRock Silver Logo            "
 echo " 08. PS5 Logo Logo            "
-echo " 09. MeiMeiDXE            "
+echo " 09. MeiMeiDXE No Logo Permanent 8 Cores unlocked           "
+echo " 10. MeiMeiDXE-Bazzite Original Logo Permanent 8 Cores unlocked            "
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
 echo " 0e. Exit to Bios            "
 echo " 0r. Reboot            "
@@ -239,6 +243,25 @@ if exist fs0:\AfuEfix64.efi then
 endif
 if exist fs1:\AfuEfix64.efi then
   fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE.ROM /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-Bazzite
+cls
+echo " ************************************************"
+echo " ** (WARNING) Flash Firmware at your own RISK! **"
+echo " **     Welcome to MeiMeiDXE-Bazzite           **"
+echo " ************************************************"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\bc250_3.00_meimeidxe-bazzite.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\bc250_3.00_meimeidxe-bazzite.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
