@@ -23,10 +23,16 @@ if "%1" == "05" then
   goto SUGARY
 endif
 if "%1" == "06" then
-  goto SORIGINAL
+  goto ASROCKW
 endif
 if "%1" == "07" then
-  goto ASROCK
+  goto ASROCKS
+endif
+if "%1" == "08" then
+  goto PS5LINUX
+endif
+if "%1" == "09" then
+  goto MeiMeiDXE
 endif
 if "%1" == "0f" then
   goto FIRMWARE
@@ -54,8 +60,10 @@ echo " 02. Bazzite Orange Logo            "
 echo " 03. Bazzite Pride Logo            "
 echo " 04. CachyOS Logo            "
 echo " 05. Steam Sugary Logo            "
-echo " 06. Steam Original Logo            "
-echo " 07. ASRock Logo            "
+echo " 06. ASRock White Logo            "
+echo " 07. ASRock Silver Logo            "
+echo " 08. PS5 Logo Logo            "
+echo " 09. MeiMeiDXE            "
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
 echo " 0e. Exit to Bios            "
 echo " 0r. Reboot            "
@@ -160,39 +168,77 @@ if exist fs1:\AfuEfix64.efi then
 endif
 goto drive_error
 
-:SORIGINAL
+:ASROCKW
 cls
 echo " ************************************************"
 echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to Steam Original 600x600      **"
+echo " **     Welcome to ASRock White Logo           **"
 echo " ************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bc250-Steam.rom /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\asrock-600x400W.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bc250-Steam.rom /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\asrock-600x400W.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 goto drive_error
 
-:ASROCK
+:ASROCKS
 cls
 echo " ************************************************"
 echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to ASRock Logo 800x600            **"
+echo " **     Welcome to ASRock Silver Logo          **"
 echo " ************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\asrock-800x600.rom /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\asrock-600x400S.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\asrock-800x600.rom /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\asrock-600x400S.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:PS5LINUX
+cls
+echo " ************************************************"
+echo " ** (WARNING) Flash Firmware at your own RISK! **"
+echo " **     Welcome to PS5 Linux Logo              **"
+echo " ************************************************"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\ps5-linux.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\ps5-linux.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE
+cls
+echo " ************************************************"
+echo " ** (WARNING) Flash Firmware at your own RISK! **"
+echo " **     Welcome to MeiMeiDXE                   **"
+echo " ************************************************"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE.ROM /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE.ROM /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
