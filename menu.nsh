@@ -8,36 +8,12 @@ endif
 
 # Route the user choice based on the first parameter (%1)
 if "%1" == "01" then
-  goto BORIGINAL
-endif
-if "%1" == "02" then
-  goto BORANGE
-endif
-if "%1" == "03" then
-  goto BPRIDE
-endif
-if "%1" == "04" then
-  goto CACHY
-endif
-if "%1" == "05" then
-  goto SUGARY
-endif
-if "%1" == "06" then
-  goto ASROCKW
-endif
-if "%1" == "07" then
-  goto ASROCKS
-endif
-if "%1" == "08" then
-  goto PS5LINUX
-endif
-if "%1" == "09" then
   goto MeiMeiDXE
 endif
-if "%1" == "10" then
+if "%1" == "02" then
   goto MeiMeiDXE-Bazzite
 endif
-if "%1" == "11" then
+if "%1" == "03" then
   goto MeiMeiDXE-Steam
 endif
 if "%1" == "0f" then
@@ -61,17 +37,9 @@ echo "==========================================================================
 echo " Remember to configure GFX Configuration after each successful BIOS Flash.            "
 echo " Modded firmware with the chipset menu exposed. Based on BC250 P3.00 ROM.        "
 echo "=================================================================================================="
-echo " 01. Bazzite Original Logo            "
-echo " 02. Bazzite Orange Logo            "
-echo " 03. Bazzite Pride Logo            "
-echo " 04. CachyOS Logo            "
-echo " 05. Steam Sugary Logo            "
-echo " 06. ASRock White Logo            "
-echo " 07. ASRock Silver Logo            "
-echo " 08. PS5 Logo Logo            "
-echo " 09. MeiMeiDXE - No Logo with Permanent 8 Cores unlocked           "
-echo " 10. MeiMeiDXE - Bazzite Logo with Permanent 8 Cores unlocked            "
-echo " 11. MeiMeiDXE - Steam Logo with Permanent 8 Cores unlocked            "
+echo " 01. MeiMeiDXE - No Logo with Permanent 8 Cores unlocked           "
+echo " 02. MeiMeiDXE - Bazzite Logo with Permanent 8 Cores unlocked            "
+echo " 03. MeiMeiDXE - Steam Logo with Permanent 8 Cores unlocked            "
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
 echo " 0e. Exit to Bios            "
 echo " 0r. Reboot            "
@@ -80,158 +48,6 @@ echo " Usage: menu [option]             "
 echo "=================================================================================================="
 echo "Type 'menu 01' for Bazzite Original Logo, 'Type menu 02' for Bazzite Orange Logo, etc."
 goto end_menu
-
-:BORIGINAL
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to Bazzite Original 600x600    **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bazzite_original-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bazzite_original-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:BORANGE
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to Bazzite Orange 600x600      **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bazzite_organge-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bazzite_organge-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:BPRIDE
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to Bazzite Pride 600x600       **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bazzite_pride-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bazzite_pride-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:CACHY
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to CachyOS 600x600             **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\cachyos-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\cachyos-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:SUGARY
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to Steam Sugary 600x600        **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\steam_sugary-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\steam_sugary-600.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:ASROCKW
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to ASRock White Logo           **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\asrock-600x400W.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\asrock-600x400W.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:ASROCKS
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to ASRock Silver Logo          **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\asrock-600x400S.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\asrock-600x400S.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:PS5LINUX
-cls
-echo " ************************************************"
-echo " ** (WARNING) Flash Firmware at your own RISK! **"
-echo " **     Welcome to PS5 Linux Logo              **"
-echo " ************************************************"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\ps5-linux.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\ps5-linux.rom /P /N /B /K /RLC:E
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
 
 :MeiMeiDXE
 cls
