@@ -64,7 +64,7 @@ goto end_menu
 :MeiMeiDXE
 cls
 echo " ***********************************************************"
-echo " ** 	(WARNING) Flash Firmware at your own RISK! 	**"
+echo " ** 	(WARNING) Flash Firmware at your own RISK!          **"
 echo " **     Welcome to MeiMeiDXE-No Logo 8 Cores unlocked  	**"
 echo " ***********************************************************"
 pause
@@ -102,7 +102,7 @@ goto drive_error
 :MeiMeiDXE-Steam
 cls
 echo " *****************************************************************"
-echo " **        (WARNING) Flash Firmware at your own RISK!	      **"
+echo " **        (WARNING) Flash Firmware at your own RISK!			  **"
 echo " **     Welcome to MeiMeiDXE-SteamOS Logo 8 Cores unlocked      **"
 echo " *****************************************************************"
 pause
@@ -121,7 +121,7 @@ goto drive_error
 :MeiMeiDXE-CachyOS
 cls
 echo " *****************************************************************"
-echo " **        (WARNING) Flash Firmware at your own RISK!	      **"
+echo " **        (WARNING) Flash Firmware at your own RISK!           **"
 echo " **     Welcome to MeiMeiDXE-CachyOS Logo 8 Cores unlocked      **"
 echo " *****************************************************************"
 pause
@@ -160,7 +160,7 @@ goto drive_error
 cls
 echo " **********************************************************************"
 echo " **         (WARNING) Flash Firmware at your own RISK!	           **"
-echo " **     	Welcome to MeiMeiDXE-AMD Logo 8 Cores unlocked   	   **"
+echo " **     	Welcome to MeiMeiDXE-AMD Logo 8 Cores unlocked             **"
 echo " **********************************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
