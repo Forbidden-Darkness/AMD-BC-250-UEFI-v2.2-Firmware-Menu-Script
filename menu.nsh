@@ -106,7 +106,6 @@ if exist fs1:\AfuEfix64.efi then
 endif
 goto drive_error
 
-
 :FIRMWARE
 cls
 echo "Preparing original firmware backup sequence..."
