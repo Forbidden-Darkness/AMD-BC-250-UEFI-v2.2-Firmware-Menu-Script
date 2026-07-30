@@ -50,7 +50,7 @@ echo " 0r. Reboot            "
 echo "=================================================================================================="
 echo " Usage: menu [option]             "
 echo "=================================================================================================="
-echo "Type 'menu 01' for Bazzite Original Logo, 'Type menu 02' for Bazzite Orange Logo, etc."
+echo "Type 'menu 01' for NO Logo, 'Type menu 02' for Bazzite Logo, etc."
 goto end_menu
 
 :MeiMeiDXE
