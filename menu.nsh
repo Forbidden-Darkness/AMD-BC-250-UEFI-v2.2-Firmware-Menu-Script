@@ -61,12 +61,12 @@ echo " **     Welcome to MeiMeiDXE-No Logo 8 Cores unlocked  	**"
 echo " ***********************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE.ROM /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE.ROM /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
@@ -76,16 +76,16 @@ goto drive_error
 cls
 echo " *****************************************************************"
 echo " **         (WARNING) Flash Firmware at your own RISK!	      **"
-echo " **     Welcome to MeiMeiDXE-Bazzite Logo 8 Cores unlocked      **"
+echo " **     Welcome to MeiMeiDXE-BazziteOS Logo 8 Cores unlocked    **"
 echo " *****************************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bc250_3.00_meimeidxe-bazzite.rom /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-BazziteOS /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bc250_3.00_meimeidxe-bazzite.rom /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-BazziteOS /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
@@ -95,16 +95,16 @@ goto drive_error
 cls
 echo " *****************************************************************"
 echo " **        (WARNING) Flash Firmware at your own RISK!	      **"
-echo " **     Welcome to MeiMeiDXE-Steam Logo 8 Cores unlocked        **"
+echo " **     Welcome to MeiMeiDXE-SteamOS Logo 8 Cores unlocked      **"
 echo " *****************************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bc250_3.00_meimeidxe-steam.rom /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-SteamOS /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bc250_3.00_meimeidxe-steam.rom /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-SteamOS /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
@@ -118,12 +118,12 @@ echo " **     Welcome to MeiMeiDXE-CachyOS Logo 8 Cores unlocked      **"
 echo " *****************************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\bc250_3.00_meimeidxe-cachyos.rom /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-CachyOS /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\bc250_3.00_meimeidxe-cachyos.rom /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-CachyOS /P /N /B /K /RLC:E
   stall 5000000
   goto post_flash
 endif
