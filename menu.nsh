@@ -28,6 +28,9 @@ endif
 if "%1" == "0f" then
   goto FIRMWARE
 endif
+if "%1" == "fr" then
+  goto FIRMWARE-Recover
+endif
 if "%1" == "0e" then
   goto EXIT
 endif
@@ -53,6 +56,7 @@ echo " 04. MeiMeiDXE - CachyOS Logo with Permanent 8 Cores unlocked            "
 echo " 05. MeiMeiDXE - Steam Name Logo with Permanent 8 Cores unlocked            "
 echo " 06. MeiMeiDXE - AMD Logo with Permanent 8 Cores unlocked            "
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
+echo " fr. Recover from Firmware Backup (Make sure you backup first before making any changes!)    "
 echo " 0e. Exit to Bios            "
 echo " 0r. Reboot            "
 echo "=================================================================================================="
@@ -64,8 +68,8 @@ goto end_menu
 :MeiMeiDXE
 cls
 echo " ***********************************************************"
-echo " ** 	(WARNING) Flash Firmware at your own RISK!          **"
-echo " **     Welcome to MeiMeiDXE-No Logo 8 Cores unlocked  	**"
+echo " **       (WARNING) Flash Firmware at your own RISK!      **"
+echo " **     Welcome to MeiMeiDXE-No Logo 8 Cores unlocked     **"
 echo " ***********************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
@@ -83,7 +87,7 @@ goto drive_error
 :MeiMeiDXE-Bazzite
 cls
 echo " *****************************************************************"
-echo " **         (WARNING) Flash Firmware at your own RISK!	      **"
+echo " **         (WARNING) Flash Firmware at your own RISK!          **"
 echo " **     Welcome to MeiMeiDXE-BazziteOS Logo 8 Cores unlocked    **"
 echo " *****************************************************************"
 pause
@@ -102,7 +106,7 @@ goto drive_error
 :MeiMeiDXE-Steam
 cls
 echo " *****************************************************************"
-echo " **        (WARNING) Flash Firmware at your own RISK!			  **"
+echo " **        (WARNING) Flash Firmware at your own RISK!           **"
 echo " **     Welcome to MeiMeiDXE-SteamOS Logo 8 Cores unlocked      **"
 echo " *****************************************************************"
 pause
@@ -140,7 +144,7 @@ goto drive_error
 :MeiMeiDXE-SteamOS
 cls
 echo " **********************************************************************"
-echo " **           (WARNING) Flash Firmware at your own RISK!	           **"
+echo " **           (WARNING) Flash Firmware at your own RISK!             **"
 echo " **     Welcome to MeiMeiDXE-SteamOS Name Logo 8 Cores unlocked      **"
 echo " **********************************************************************"
 pause
@@ -159,8 +163,8 @@ goto drive_error
 :MeiMeiDXE-AMD
 cls
 echo " **********************************************************************"
-echo " **         (WARNING) Flash Firmware at your own RISK!	           **"
-echo " **     	Welcome to MeiMeiDXE-AMD Logo 8 Cores unlocked             **"
+echo " **         (WARNING) Flash Firmware at your own RISK!               **"
+echo " **       Welcome to MeiMeiDXE-AMD Logo 8 Cores unlocked             **"
 echo " **********************************************************************"
 pause
 if exist fs0:\AfuEfix64.efi then
@@ -177,7 +181,7 @@ goto drive_error
 
 :FIRMWARE
 cls
-echo "Preparing original firmware backup sequence..."
+echo "Preparing to backup your current firmware..."
 if exist fs0:\AfuEfix64.efi then
   fs0:
   mkdir \Firmware_Backup
@@ -194,6 +198,21 @@ if exist fs1:\AfuEfix64.efi then
 endif
 goto drive_error
 
+:FIRMWARE-Recover
+cls
+echo "Recovering from last good known firmware backup..."
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_recover
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
+  stall 5000000
+  goto post_recover
+endif
+goto drive_error
+
 :post_flash
 echo "Firmware update finished. Press Enter to return to main menu."
 pause -q
@@ -202,6 +221,12 @@ goto show_menu
 
 :post_backup
 echo "Firmware Backup Completed successfully. Press Enter."
+pause -q
+cls
+goto show_menu
+
+:post_recover
+echo "Firmware Recovery finished. Press Enter to return to main menu."
 pause -q
 cls
 goto show_menu
