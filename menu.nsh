@@ -29,10 +29,7 @@ if "%1" == "0f" then
   goto FIRMWARE
 endif
 if "%1" == "fr" then
-  goto FIRMWARE-Recover
-endif
-if "%1" == "0e" then
-  goto EXIT
+  goto FIRMWARE-RECOVERY
 endif
 if "%1" == "0r" then
   goto REBOOT
@@ -40,45 +37,48 @@ endif
 
 echo "Invalid selection: %1"
 echo "Please choose a valid two-digit menu option."
-goto end_menu
+echo "Press Enter to return to menu."
+pause -q
+goto show_menu
 
 :show_menu
-echo "=================================================================================================="
+cls
+echo "===================================================================================================="
 echo "  AMD BC-250 UEFI v2.2 Firmware Menu Script        "
-echo "=================================================================================================="
+echo "===================================================================================================="
 echo " Remember to configure GFX Configuration after each successful BIOS Flash.            "
-echo " Modded firmware with the chipset menu exposed. Based on BC250 P3.00 ROM.        "
-echo "=================================================================================================="
-echo " 01. MeiMeiDXE - No Logo with Permanent 8 Cores unlocked           "
-echo " 02. MeiMeiDXE - Bazzite Logo with Permanent 8 Cores unlocked            "
-echo " 03. MeiMeiDXE - Steam Logo with Permanent 8 Cores unlocked            "
-echo " 04. MeiMeiDXE - CachyOS Logo with Permanent 8 Cores unlocked            "
-echo " 05. MeiMeiDXE - Steam Name Logo with Permanent 8 Cores unlocked            "
-echo " 06. MeiMeiDXE - AMD Logo with Permanent 8 Cores unlocked            "
+echo " Modded MeiMeiDXE Firmware with the chipset menu exposed and Permanent 8 Cores unlocked with safety On/Off Toggle. Based on BC250 P3.00 ROM.        "
+echo "===================================================================================================="
+echo " 01. MeiMeiDXE - No Logo, Permanent 8 Cores unlocked with safety On/Off Toggle           "
+echo " 02. MeiMeiDXE - Bazzite Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 03. MeiMeiDXE - Steam Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 04. MeiMeiDXE - CachyOS Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 05. MeiMeiDXE - Steam Name Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 06. MeiMeiDXE - AMD Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
 echo " fr. Recover from Firmware Backup (Make sure you backup first before making any changes!)    "
 echo " 0e. Exit to Bios            "
 echo " 0r. Reboot            "
-echo "=================================================================================================="
+echo "===================================================================================================="
 echo " Usage: menu [option]             "
-echo "=================================================================================================="
+echo "===================================================================================================="
 echo "Type 'menu 01' for No Logo, 'Type menu 02' for Bazzite Logo, etc."
 goto end_menu
 
 :MeiMeiDXE
 cls
-echo " ***********************************************************"
-echo " **       (WARNING) Flash Firmware at your own RISK!      **"
-echo " **     Welcome to MeiMeiDXE-No Logo 8 Cores unlocked     **"
-echo " ***********************************************************"
+echo -b " +****************************************************************************+"
+echo -b " **               (WARNING) Flash Firmware at your own RISK!                 **"
+echo -b " **     Welcome to MeiMeiDXE-No Logo 8 Cores unlocked with On/Off Toggle     **"
+echo -b " +****************************************************************************+"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -86,18 +86,17 @@ goto drive_error
 
 :MeiMeiDXE-Bazzite
 cls
-echo " *****************************************************************"
-echo " **         (WARNING) Flash Firmware at your own RISK!          **"
-echo " **     Welcome to MeiMeiDXE-BazziteOS Logo 8 Cores unlocked    **"
-echo " *****************************************************************"
+echo -b " +**********************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
+echo -b " **     Welcome to MeiMeiDXE-BazziteOS Logo 8 Cores unlocked with On/Off Toggle    **"
+echo -b " +**********************************************************************************+"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-BazziteOS /P /N /B /K /RLC:E
-  stall 5000000
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-BazziteOS /P /B /N /K /RLC:E /CLRCFG
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-BazziteOS /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-BazziteOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -105,18 +104,18 @@ goto drive_error
 
 :MeiMeiDXE-Steam
 cls
-echo " *****************************************************************"
-echo " **        (WARNING) Flash Firmware at your own RISK!           **"
-echo " **     Welcome to MeiMeiDXE-SteamOS Logo 8 Cores unlocked      **"
-echo " *****************************************************************"
+echo -b " +**********************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
+echo -b " **     Welcome to MeiMeiDXE-SteamOS Logo 8 Cores unlocked with On/Off Toggle      **"
+echo -b " +**********************************************************************************+"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-SteamOS /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-SteamOS /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -124,18 +123,18 @@ goto drive_error
 
 :MeiMeiDXE-CachyOS
 cls
-echo " *****************************************************************"
-echo " **        (WARNING) Flash Firmware at your own RISK!           **"
-echo " **     Welcome to MeiMeiDXE-CachyOS Logo 8 Cores unlocked      **"
-echo " *****************************************************************"
+echo -b " +**********************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
+echo -b " **     Welcome to MeiMeiDXE-CachyOS Logo 8 Cores unlocked with On/Off Toggle      **"
+echo -b " +**********************************************************************************+"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-CachyOS /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-CachyOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-CachyOS /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-CachyOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -143,18 +142,18 @@ goto drive_error
 
 :MeiMeiDXE-SteamOS
 cls
-echo " **********************************************************************"
-echo " **           (WARNING) Flash Firmware at your own RISK!             **"
-echo " **     Welcome to MeiMeiDXE-SteamOS Name Logo 8 Cores unlocked      **"
-echo " **********************************************************************"
+echo -b " +***************************************************************************************+"
+echo -b " **                    (WARNING) Flash Firmware at your own RISK!                       **"
+echo -b " **     Welcome to MeiMeiDXE-SteamOS Name Logo 8 Cores unlocked with On/Off Toggle      **"
+echo -b " +***************************************************************************************+"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-SteamOS_Name /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_Name /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-SteamOS_Name /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_Name /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -162,18 +161,18 @@ goto drive_error
 
 :MeiMeiDXE-AMD
 cls
-echo " **********************************************************************"
-echo " **         (WARNING) Flash Firmware at your own RISK!               **"
-echo " **       Welcome to MeiMeiDXE-AMD Logo 8 Cores unlocked             **"
-echo " **********************************************************************"
+echo -b " +***************************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                          **"
+echo -b " **       Welcome to MeiMeiDXE-AMD Logo 8 Cores unlocked with On/Off Toggle             **"
+echo -b " +***************************************************************************************+"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-AMD /P /N /B /K /RLC:E
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-AMD /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-AMD /P /N /B /K /RLC:E
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-AMD /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -198,44 +197,40 @@ if exist fs1:\AfuEfix64.efi then
 endif
 goto drive_error
 
-:FIRMWARE-Recover
+:FIRMWARE-RECOVERY
 cls
 echo "Recovering from last good known firmware backup..."
 if exist fs0:\AfuEfix64.efi then
   fs0:\AfuEfix64.efi fs0:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
   stall 5000000
-  goto post_recover
+  goto post_recovery
 endif
 if exist fs1:\AfuEfix64.efi then
   fs1:\AfuEfix64.efi fs1:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
   stall 5000000
-  goto post_recover
+  goto post_recovery
 endif
 goto drive_error
 
 :post_flash
-echo "Firmware update finished. Press Enter to return to main menu."
+echo -b " Firmware update Finished. Press Enter to return to main menu."
 pause -q
-cls
 goto show_menu
 
 :post_backup
-echo "Firmware Backup Completed successfully. Press Enter."
+echo -b " Firmware Backup Completed Successfully. Press Enter."
 pause -q
-cls
 goto show_menu
 
-:post_recover
-echo "Firmware Recovery finished. Press Enter to return to main menu."
+:post_recovery
+echo -b " Firmware Recovery Finished. Press Enter to return to main menu."
 pause -q
-cls
 goto show_menu
 
 :drive_error
-echo "ERROR: AfuEfix64.efi was not detected on fs0: or fs1:."
-echo "Check USB file placement."
+echo -b "ERROR: AfuEfix64.efi was not detected on fs0: or fs1:."
+echo -b "Check USB file placement."
 pause
-cls
 goto show_menu
 
 :REBOOT
