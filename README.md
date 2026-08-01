@@ -7,9 +7,9 @@ AMD BC-250 script to Backup Firmware &amp; Flash a Custom Firmware based on the 
 <img width="1920" height="1080" alt="CMOS2" src="https://github.com/user-attachments/assets/1d7ee68e-0fb9-4b01-9cd1-cb645c99d28e" />
 <img width="1920" height="1080" alt="CMOS3" src="https://github.com/user-attachments/assets/615fc338-61f3-4748-9804-336ba8f8cb81" />
 <img width="1920" height="1080" alt="SteamOS Logo" src="https://github.com/user-attachments/assets/13d3a066-8d58-46a9-98e5-d019c541b497" />
-release-0.1.1
+Regular SteamOS Logo release-0.1.1
 <img width="1920" height="1080" alt="New SteamOS Logo-XL" src="https://github.com/user-attachments/assets/e9ea521d-4a24-41b6-941f-8ba1aa652443" />
-release-0.1.2
+Xtra Large SteamOS Logo release-0.1.2
 <img width="1920" height="1080" alt="Bazzite-Screenshot 2026-06-27 02-55-41" src="https://github.com/user-attachments/assets/038e52a0-9588-4d2a-9e07-198f10f760ae" />
 <img width="1920" height="1080" alt="CachyOS-Screenshot 2026-06-27 02-58-29" src="https://github.com/user-attachments/assets/11c3e41e-d36a-44d1-8c1d-2cacc181d768" />
 <img width="1920" height="1080" alt="SteamOS Name" src="https://github.com/user-attachments/assets/e83674c2-69f6-42ab-930e-e21b8f19f37c" />
