@@ -20,4 +20,6 @@ Xtra Large SteamOS Logo release-0.1.2
 
 
 <img width="1920" height="1080" alt="Bulbasaur-Screenshot 2026-06-27 03-02-16" src="https://github.com/user-attachments/assets/9237b5ff-961f-475c-9197-39ba1c46fb11" />
+NOTE: THIS IMAGE IS NOT IN ANY RELEASE.
 <img width="1920" height="1080" alt="Sylvion-Screenshot 2026-06-27 03-04-32" src="https://github.com/user-attachments/assets/2397e7c8-b7ab-436c-8d08-636f59a69101" />
+NOTE: THIS IMAGE IS NOT IN ANY RELEASE.
