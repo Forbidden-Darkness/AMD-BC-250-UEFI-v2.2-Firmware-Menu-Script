@@ -7,27 +7,27 @@ AMD BC-250 script to Backup Firmware &amp; Flash a Custom Firmware based on the 
 <img width="1920" height="1080" alt="CMOS2" src="https://github.com/user-attachments/assets/1d7ee68e-0fb9-4b01-9cd1-cb645c99d28e" />
 <img width="1920" height="1080" alt="CMOS3" src="https://github.com/user-attachments/assets/615fc338-61f3-4748-9804-336ba8f8cb81" />
 <img width="1920" height="1080" alt="SteamOS Logo" src="https://github.com/user-attachments/assets/13d3a066-8d58-46a9-98e5-d019c541b497" />
-Note: Regular SteamOS Logo in release-0.1.1
+Note: Regular SteamOS Logo in release-0.1.3->
 <img width="1920" height="1080" alt="New SteamOS Logo-XL" src="https://github.com/user-attachments/assets/e9ea521d-4a24-41b6-941f-8ba1aa652443" />
-Note: Xtra Large SteamOS Logo in release-0.1.2
+Note: Xtra Large SteamOS Logo in release-0.1.2->
 <img width="1920" height="1080" alt="BazziteOS" src="https://github.com/user-attachments/assets/78c5589a-7d55-4258-afc5-3232e62aeff0" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="AMD_BC-250 Logo" src="https://github.com/user-attachments/assets/ca23ce6c-08ab-4293-9a70-0e55f66dc93c" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="CachyOS" src="https://github.com/user-attachments/assets/be4010a0-1b65-45d2-aac1-7cb7c9e2b921" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="SteamOS Name" src="https://github.com/user-attachments/assets/e83674c2-69f6-42ab-930e-e21b8f19f37c" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="SteamOS Blackout" src="https://github.com/user-attachments/assets/58ee42be-fdb7-40ed-a67c-3030524d49e6" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="SteamOS Blackout 2" src="https://github.com/user-attachments/assets/9da39bae-88c3-441a-a3dc-015da9967bab" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="SteamOS+Name" src="https://github.com/user-attachments/assets/a11a85e4-9949-4b0d-a0ad-45456f8a4a36" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="SteamOS Glass" src="https://github.com/user-attachments/assets/5212953b-fa52-4065-8e1a-9fde238ce3fb" />
-Note: release-0.1.2
+Note: release-0.1.2->
 <img width="1920" height="1080" alt="SteamOS Frost" src="https://github.com/user-attachments/assets/22258389-6170-41ba-9849-2404c4f6d12c" />
-Note: release-0.1.2
+Note: release-0.1.2->
 
 <img width="1920" height="1080" alt="Bulbasaur-Screenshot 2026-06-27 03-02-16" src="https://github.com/user-attachments/assets/9237b5ff-961f-475c-9197-39ba1c46fb11" />
 NOTE: THIS IMAGE IS NOT IN ANY RELEASE.
