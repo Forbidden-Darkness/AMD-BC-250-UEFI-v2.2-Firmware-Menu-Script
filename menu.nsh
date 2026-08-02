@@ -14,16 +14,37 @@ if "%1" == "02" then
   goto MeiMeiDXE-Bazzite
 endif
 if "%1" == "03" then
-  goto MeiMeiDXE-Steam
+  goto MeiMeiDXE-Steam.M
 endif
 if "%1" == "04" then
-  goto MeiMeiDXE-CachyOS
+  goto MeiMeiDXE-Steam.XL
 endif
 if "%1" == "05" then
-  goto MeiMeiDXE-SteamOS
+  goto MeiMeiDXE-CachyOS
 endif
 if "%1" == "06" then
+  goto MeiMeiDXE-SteamOS
+endif
+if "%1" == "07" then
   goto MeiMeiDXE-AMD
+endif
+if "%1" == "08" then
+  goto MeiMeiDXE-AMD.PW
+endif
+if "%1" == "09" then
+  goto MeiMeiDXE-SteamOS-BlackOut
+endif
+if "%1" == "10" then
+  goto MeiMeiDXE-SteamOS-BlackOut.2
+endif
+if "%1" == "11" then
+  goto MeiMeiDXE-SteamOS.GB
+endif
+if "%1" == "12" then
+  goto MeiMeiDXE-SteamOS.FST
+endif
+if "%1" == "13" then
+  goto MeiMeiDXE-SteamOS.LG+N
 endif
 if "%1" == "0f" then
   goto FIRMWARE
@@ -51,10 +72,17 @@ echo " Modded MeiMeiDXE Firmware with the chipset menu exposed and Permanent 8 C
 echo "===================================================================================================="
 echo " 01. MeiMeiDXE - No Logo, Permanent 8 Cores unlocked with safety On/Off Toggle           "
 echo " 02. MeiMeiDXE - Bazzite Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
-echo " 03. MeiMeiDXE - Steam Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
-echo " 04. MeiMeiDXE - CachyOS Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
-echo " 05. MeiMeiDXE - Steam Name Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
-echo " 06. MeiMeiDXE - AMD Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 03. MeiMeiDXE - Steam Logo, Permanent 8 Cores unlocked with safety On/Off Toggle           "
+echo " 04. MeiMeiDXE - Steam XL Logo, Permanent 8 Cores unlocked with safety On/Off Toggle           "
+echo " 05. MeiMeiDXE - CachyOS Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 06. MeiMeiDXE - Steam Name Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 07. MeiMeiDXE - AMD Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 08. MeiMeiDXE - AMD Pure Whit Logo, Permanent 8 Cores unlocked with safety On/Off Toggle            "
+echo " 09. MeiMeiDXE - SteamOS BlackOutCapsule, Permanent 8 Cores unlocked with safety On/Off Toggle   "
+echo " 10. MeiMeiDXE - SteamOS BlackOutCapsule.2, Permanent 8 Cores unlocked with safety On/Off Toggle "
+echo " 11. MeiMeiDXE - Steam Name Glass Bubble, Permanent 8 Cores unlocked with safety On/Off Toggle"
+echo " 12. MeiMeiDXE - Steam Name Frost Bubble, Permanent 8 Cores unlocked with safety On/Off Toggle"
+echo " 13. MeiMeiDXE - Steam Logo + Steam Name, Permanent 8 Cores unlocked with safety On/Off Toggle"
 echo " 0f. Firmware Backup (Always backup your Firmware First!)            "
 echo " fr. Recover from Firmware Backup (Make sure you backup first before making any changes!)    "
 echo " 0e. Exit to Bios            "
@@ -102,7 +130,7 @@ if exist fs1:\AfuEfix64.efi then
 endif
 goto drive_error
 
-:MeiMeiDXE-Steam
+:MeiMeiDXE-Steam.M
 cls
 echo -b " +**********************************************************************************+"
 echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
@@ -110,12 +138,31 @@ echo -b " **     Welcome to MeiMeiDXE-SteamOS Logo 8 Cores unlocked with On/Off 
 echo -b " +**********************************************************************************+"
 pause
 if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS /P /B /N /K /RLC:E /CLRCFG
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS.M /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
 if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS /P /B /N /K /RLC:E /CLRCFG
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS.M /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-Steam.XL
+cls
+echo -b " +**********************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
+echo -b " **  Welcome to MeiMeiDXE-SteamOS X-Large Logo 8 Cores unlocked with On/Off Toggle **"
+echo -b " +**********************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS.XL /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS.XL /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -173,6 +220,120 @@ if exist fs0:\AfuEfix64.efi then
 endif
 if exist fs1:\AfuEfix64.efi then
   fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-AMD /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-AMD.PW
+cls
+echo -b " +***************************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                          **"
+echo -b " **    Welcome to MeiMeiDXE-AMD Pure White Logo 8 Cores unlocked with On/Off Toggle     **"
+echo -b " +***************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-AMD.PW /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-AMD.PW /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-SteamOS-BlackOut
+cls
+echo -b " +*******************************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                              **"
+echo -b " **  Welcome to MeiMeiDXE SteamOS BlackOutCapsule Logo 8 Cores unlocked with On/Off Toggle  **"
+echo -b " +*******************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS-BlackOut /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS-BlackOut /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-SteamOS-BlackOut.2
+cls
+echo -b " +*******************************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                              **"
+echo -b " ** Welcome to MeiMeiDXE SteamOS BlackOutCapsule 2 Logo 8 Cores unlocked with On/Off Toggle **"
+echo -b " +*******************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS-BlackOut.2 /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS-BlackOut.2 /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-SteamOS.GB
+cls
+echo -b " +*******************************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                              **"
+echo -b " ** Welcome to MeiMeiDXE SteamOS Name Glass Bubble Logo 8 Cores unlocked with On/Off Toggle **"
+echo -b " +*******************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_Name.GB /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_Name.GB /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-SteamOS.FST
+cls
+echo -b " +*******************************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                              **"
+echo -b " ** Welcome to MeiMeiDXE SteamOS Name Frost Bubble Logo 8 Cores unlocked with On/Off Toggle **"
+echo -b " +*******************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_Name.FST /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_Name.FST /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:MeiMeiDXE-SteamOS.LG+N
+cls
+echo -b " +*******************************************************************************************+"
+echo -b " **                 (WARNING) Flash Firmware at your own RISK!                              **"
+echo -b " **   Welcome to MeiMeiDXE SteamOS Logo + Name 8 Cores unlocked with On/Off Toggle          **"
+echo -b " +*******************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_LG+N /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-SteamOS_LG+N /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
