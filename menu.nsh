@@ -46,6 +46,12 @@ endif
 if "%1" == "13" then
   goto MeiMeiDXE-SteamOS.LG+N
 endif
+if "%1" == "R1" then
+  goto ATARI
+endif
+if "%1" == "R2" then
+  goto WEYLAND
+endif
 if "%1" == "0f" then
   goto FIRMWARE
 endif
@@ -337,6 +343,44 @@ if exist fs0:\AfuEfix64.efi then
 endif
 if exist fs1:\AfuEfix64.efi then
   fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-v2-SteamOS_LG+N /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:ATARI
+cls
+echo -b " +*****************************************************************************************+"
+echo -b " **                  (WARNING) Flash Firmware at your own RISK!                           **"
+echo -b " **       Welcome to MeiMeiDXE-v2 ATARI Logo 8 Cores unlocked with On/Off Toggle          **"
+echo -b " +*****************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-v2-Atari /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-v2-Atari /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:WEYLAND
+cls
+echo -b " +*****************************************************************************************+"
+echo -b " **                  (WARNING) Flash Firmware at your own RISK!                           **"
+echo -b " **     Welcome to MeiMeiDXE-v2 WEYLAND Logo 8 Cores unlocked with On/Off Toggle          **"
+echo -b " +*****************************************************************************************+"
+pause
+if exist fs0:\AfuEfix64.efi then
+  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXE-T-v2-Weyland /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+if exist fs1:\AfuEfix64.efi then
+  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXE-T-v2-Weyland /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
