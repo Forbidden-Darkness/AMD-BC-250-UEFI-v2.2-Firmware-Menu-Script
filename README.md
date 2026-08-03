@@ -25,7 +25,7 @@ Note: release-0.1.2-> SteamOS Bloackout
 <img width="1920" height="1080" alt="SteamOS Blackout 2" src="https://github.com/user-attachments/assets/9da39bae-88c3-441a-a3dc-015da9967bab" />
 Note: release-0.1.2-> SteamOS Blackout 2
 <img width="1920" height="1080" alt="SteamOS+Name" src="https://github.com/user-attachments/assets/a11a85e4-9949-4b0d-a0ad-45456f8a4a36" />
-Note: release-0.1.2->
+Note: release-0.1.2-> SteamOS Logo with Name
 <img width="1920" height="1080" alt="SteamOS Glass" src="https://github.com/user-attachments/assets/5212953b-fa52-4065-8e1a-9fde238ce3fb" />
 Note: release-0.1.2-> SteamOS Glass Capsule
 <img width="1920" height="1080" alt="SteamOS Frost" src="https://github.com/user-attachments/assets/22258389-6170-41ba-9849-2404c4f6d12c" />
