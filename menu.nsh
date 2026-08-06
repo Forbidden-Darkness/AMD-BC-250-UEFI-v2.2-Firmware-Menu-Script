@@ -464,9 +464,9 @@ endif
 goto drive_error
 
 :post_flash
-echo -b " Firmware update Finished. Press Enter to return to main menu."
+echo -b " Firmware update Finished. The system will now shutdown (Press Enter) to continue."
 pause -q
-goto show_menu
+reset -s
 
 :post_backup
 echo -b " Firmware Backup Completed Successfully. Press Enter."
