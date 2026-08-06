@@ -85,8 +85,7 @@ cls
 echo "===================================================================================================="
 echo "  AMD BC-250 UEFI v2.2 Firmware Menu Script        "
 echo "===================================================================================================="
-echo " Remember to configure GFX Configuration after each successful BIOS Flash.            "
-echo " Modded MeiMeiDXE v3 Firmware with Permanent 8 Cores unlocked / ACPI Fix with safety On/Off Toggle. Based on BC250 P3.00 ROM. "
+echo " MeiMeiDXE v3 Firmware with 8 Cores unlocked and ACPI Fix each with it's own On/Off Toggle. Based on BC250 P3.00 ROM. "
 echo "===================================================================================================="
 echo " menu 01 - MeiMeiDXE v3 - No Logo, Permanent 8 Cores unlocked / ACPI Fix        "
 echo " menu 02 - MeiMeiDXE v3 - Bazzite Logo, Permanent 8 Cores unlocked / ACPI Fix         "
@@ -106,7 +105,7 @@ echo " menu 0f - Firmware Backup (Always backup your Firmware First!)           
 echo " menu fr - Recover from Firmware Backup (Make sure you backup first before making any changes!)    "
 echo " menu 0e - Exit to Bios - menu 0r. Reboot  - menu 0s. Shutdown           "
 echo "===================================================================================================="
-echo " Usage: menu + [option] Examples : Type 'menu 01' for No Logo, 'Type menu 02' for Bazzite Logo, etc. [ 0 = Zero ]  "
+echo " Usage: menu + [option] Examples: Type 'menu 01' for No Logo, Type 'menu 02' for Bazzite Logo, etc. [ 0 = Zero ]  "
 echo "===================================================================================================="
 echo " "
 goto end_menu
