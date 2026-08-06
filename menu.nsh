@@ -103,7 +103,7 @@ echo " menu 13 - MeiMeiDXE v3 - Steam Logo + Steam Name, Permanent 8 Cores unloc
 echo " menu 14 - MeiMeiDXE v3 - BC250 Logo (Pure White), Permanent 8 Cores unlocked / ACPI Fix "
 echo " menu 0f - Firmware Backup (Always backup your Firmware First!)            "
 echo " menu fr - Recover from Firmware Backup (Make sure you backup first before making any changes!)    "
-echo " menu 0e - Exit to Bios - menu 0r. Reboot  - menu 0s. Shutdown           "
+echo " menu 0e - Exit to Bios - menu 0r. to Reboot  - menu 0s. to Shutdown           "
 echo "===================================================================================================="
 echo " Usage: menu + [option] Examples: Type 'menu 01' for No Logo, Type 'menu 02' for Bazzite Logo, etc. [ 0 = Zero ]  "
 echo "===================================================================================================="
