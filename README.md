@@ -2,10 +2,14 @@
 AMD BC-250 script to Backup Firmware &amp; Flash a Custom Firmware based on the Modded P3.00
 <img width="1920" height="1080" alt="UEFI Interactive Shell" src="https://github.com/user-attachments/assets/540a6853-a1b8-41cc-ada3-79c24e62100f" />
 <img width="1920" height="1080" alt="UEFI Menu selection" src="https://github.com/user-attachments/assets/89fdb444-3992-451c-aac9-157e1f6a19df" />
-<img width="1920" height="1080" alt="CMOS0" src="https://github.com/user-attachments/assets/90cbaaf7-7382-4e1d-aa3f-dc866cae7f7a" />
-<img width="1920" height="1080" alt="CMOS1" src="https://github.com/user-attachments/assets/25c6550b-0326-433b-9196-091711b3e792" />
-<img width="1920" height="1080" alt="CMOS2" src="https://github.com/user-attachments/assets/1d7ee68e-0fb9-4b01-9cd1-cb645c99d28e" />
-<img width="1920" height="1080" alt="CMOS3" src="https://github.com/user-attachments/assets/615fc338-61f3-4748-9804-336ba8f8cb81" />
+<img width="1920" height="1080" alt="Bios1" src="https://github.com/user-attachments/assets/aeaec79a-361d-41ee-ab04-15961ffd14ba" />
+<img width="1920" height="1080" alt="Bios2" src="https://github.com/user-attachments/assets/6e78ae77-43c1-446d-96e9-9bb68072c951" />
+<img width="1920" height="1080" alt="Bios3" src="https://github.com/user-attachments/assets/40526224-38e8-4a1f-893d-2fe187f7a69f" />
+<img width="1920" height="1080" alt="Bios4" src="https://github.com/user-attachments/assets/c712919e-0e45-4589-a5bd-a9fec2800ccd" />
+<img width="1920" height="1080" alt="Bios5" src="https://github.com/user-attachments/assets/5efb5a20-a4f9-4778-91a5-fec73fb9c3f2" />
+<img width="1920" height="1080" alt="Bios6" src="https://github.com/user-attachments/assets/d159f33f-7735-446b-9e95-7ec3cb08ad9b" />
+<img width="1920" height="1080" alt="Bios7" src="https://github.com/user-attachments/assets/58853151-8973-464d-9974-97b9739824d9" />
+<img width="1920" height="1080" alt="BC250 Logo" src="https://github.com/user-attachments/assets/57cbb3b7-09b0-4dc6-93c7-20a379172bea" />
 <img width="1920" height="1080" alt="SteamOS Logo" src="https://github.com/user-attachments/assets/13d3a066-8d58-46a9-98e5-d019c541b497" />
 Note: Regular SteamOS Logo in release-0.1.3 - 0.2.1 
 <img width="1920" height="1080" alt="New SteamOS Logo-H" src="https://github.com/user-attachments/assets/6d3caf32-eb5c-414e-9587-2b91551c1b27" />
