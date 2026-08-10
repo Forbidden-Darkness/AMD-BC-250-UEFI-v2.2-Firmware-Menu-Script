@@ -18,7 +18,7 @@ Note New Regular SteamOS Logo in release-0.2.2->
 <img width="1920" height="1080" alt="New SteamOS Logo-XL-H" src="https://github.com/user-attachments/assets/1543250b-020e-4c15-aa0a-e18aa2faa885" />
 Note New Xtra Large SteamOS Logo in release-0.2.2->
 <img width="1920" height="1080" alt="BazziteOS" src="https://github.com/user-attachments/assets/78c5589a-7d55-4258-afc5-3232e62aeff0" />
-Note: release-0.1.2->
+Note: release-0.1.2-> Bazzite Logo
 <img width="1920" height="1080" alt="AMD_BC-250 Logo" src="https://github.com/user-attachments/assets/ca23ce6c-08ab-4293-9a70-0e55f66dc93c" />
 Note: release-0.1.2-> Original AMD Logo
 <img width="1920" height="1080" alt="AMD_BC250-PW" src="https://github.com/user-attachments/assets/16b07f80-f9d5-450b-89e1-e7aad2f0a685" />
