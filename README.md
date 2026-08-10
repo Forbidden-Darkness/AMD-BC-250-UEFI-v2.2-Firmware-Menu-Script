@@ -12,8 +12,6 @@
 <img width="1920" height="1080" alt="Bios6" src="https://github.com/user-attachments/assets/d159f33f-7735-446b-9e95-7ec3cb08ad9b" />
 <img width="1920" height="1080" alt="Bios7" src="https://github.com/user-attachments/assets/58853151-8973-464d-9974-97b9739824d9" />
 <img width="1920" height="1080" alt="BC250 Logo" src="https://github.com/user-attachments/assets/57cbb3b7-09b0-4dc6-93c7-20a379172bea" />
-<img width="1920" height="1080" alt="AMD-BC250" src="https://github.com/user-attachments/assets/ea36fd1b-3cb7-40e4-bab1-370c905296b2" />
-<img width="1920" height="1080" alt="BC250-AMD-Logo" src="https://github.com/user-attachments/assets/c8f22a45-ca35-4ef8-9282-309b4acce773" />
 Note: BC250 Logo Pure White
 <img width="1920" height="1080" alt="SteamOS Logo" src="https://github.com/user-attachments/assets/13d3a066-8d58-46a9-98e5-d019c541b497" />
 Note: Regular SteamOS Logo in release-0.1.3 - 0.2.1 
