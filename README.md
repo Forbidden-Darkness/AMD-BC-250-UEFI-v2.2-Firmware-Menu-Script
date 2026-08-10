@@ -13,12 +13,8 @@
 <img width="1920" height="1080" alt="Bios7" src="https://github.com/user-attachments/assets/58853151-8973-464d-9974-97b9739824d9" />
 <img width="1920" height="1080" alt="BC250 Logo" src="https://github.com/user-attachments/assets/57cbb3b7-09b0-4dc6-93c7-20a379172bea" />
 Note: BC250 Logo Pure White
-<img width="1920" height="1080" alt="SteamOS Logo" src="https://github.com/user-attachments/assets/13d3a066-8d58-46a9-98e5-d019c541b497" />
-Note: Regular SteamOS Logo in release-0.1.3 - 0.2.1 
 <img width="1920" height="1080" alt="New SteamOS Logo-H" src="https://github.com/user-attachments/assets/6d3caf32-eb5c-414e-9587-2b91551c1b27" />
 Note New Regular SteamOS Logo in release-0.2.2->
-<img width="1920" height="1080" alt="New SteamOS Logo-XL" src="https://github.com/user-attachments/assets/e9ea521d-4a24-41b6-941f-8ba1aa652443" />
-Note: Xtra Large SteamOS Logo in release-0.1.2 - 0.2.1
 <img width="1920" height="1080" alt="New SteamOS Logo-XL-H" src="https://github.com/user-attachments/assets/1543250b-020e-4c15-aa0a-e18aa2faa885" />
 Note New Xtra Large SteamOS Logo in release-0.2.2->
 <img width="1920" height="1080" alt="BazziteOS" src="https://github.com/user-attachments/assets/78c5589a-7d55-4258-afc5-3232e62aeff0" />
@@ -28,9 +24,9 @@ Note: release-0.1.2-> Original AMD Logo
 <img width="1920" height="1080" alt="AMD_BC250-PW" src="https://github.com/user-attachments/assets/16b07f80-f9d5-450b-89e1-e7aad2f0a685" />
 Note: release-0.1.3-> AMD Pure White
 <img width="1920" height="1080" alt="CachyOS" src="https://github.com/user-attachments/assets/be4010a0-1b65-45d2-aac1-7cb7c9e2b921" />
-Note: release-0.1.2-> Steam Name Logo
+Note: release-0.1.2-> CachyOS
 <img width="1920" height="1080" alt="SteamOS Name" src="https://github.com/user-attachments/assets/e83674c2-69f6-42ab-930e-e21b8f19f37c" />
-Note: release-0.1.2->
+Note: release-0.1.2-> Steam Name Logo
 <img width="1920" height="1080" alt="SteamOS Blackout" src="https://github.com/user-attachments/assets/58ee42be-fdb7-40ed-a67c-3030524d49e6" />
 Note: release-0.1.2-> SteamOS Bloackout
 <img width="1920" height="1080" alt="SteamOS Blackout 2" src="https://github.com/user-attachments/assets/9da39bae-88c3-441a-a3dc-015da9967bab" />
