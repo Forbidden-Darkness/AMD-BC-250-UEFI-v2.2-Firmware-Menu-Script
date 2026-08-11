@@ -33,7 +33,6 @@ Run `menu XX` with the code from the table for your preferred bios (e.g. `menu 0
 | `14` | BC250 Logo (Pure White) | <img width="400" alt="BC250 Logo" src="https://github.com/user-attachments/assets/57cbb3b7-09b0-4dc6-93c7-20a379172bea" /> | — |
 | `R1` | ATARI Logo | <img width="400" alt="BC-250-ATARI" src="https://github.com/user-attachments/assets/677efaa2-c8fa-4ce8-b8f3-80c31044f52d" /> | 0.2.2 |
 | `R2` | Weyland Logo | <img width="400" alt="BC-250-Weyland" src="https://github.com/user-attachments/assets/b922d910-adab-4e9d-81fd-bb9ba45f3a57" /> | 0.2.2 |
-| `R3` | PUNSH | *firmware not yet included* | — |
 
 ## Unmatched / Unreleased Images
 
