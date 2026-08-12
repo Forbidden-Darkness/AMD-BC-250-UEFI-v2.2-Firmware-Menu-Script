@@ -50,7 +50,7 @@ systemctl reboot --firmware-setup
   ![New SteamOS Logo-XL-H](https://github.com/user-attachments/assets/1543250b-020e-4c15-aa0a-e18aa2faa885)
 * **CachyOS Logo** (`release-0.1.2`)  
   ![CachyOS](https://github.com/user-attachments/assets/be4010a0-1b65-45d2-aac1-7cb7c9e2b921)
-  * **Steam Graphic Wordmark** (`release-0.1.2`)  
+* **Steam Graphic Wordmark** (`release-0.1.2`)  
   ![SteamOS Name](https://github.com/user-attachments/assets/e83674c2-69f6-42ab-930e-e21b8f19f37c)
 * **AMD Standard Logo** (`release-0.1.2`)  
   ![AMD_BC-250 Logo](https://github.com/user-attachments/assets/ca23ce6c-08ab-4293-9a70-0e55f66dc93c)
