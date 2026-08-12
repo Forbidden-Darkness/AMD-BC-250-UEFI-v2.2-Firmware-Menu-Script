@@ -81,38 +81,37 @@ pause -q
 goto show_menu
 
 :show_menu
-cls
+cls 0 14
 echo " "
 echo "===================================================================================================="
-echo "                           AMD BC-250 UEFI v2.2 Firmware Menu Script                                "
+echo "                                AMD BC-250 UEFI v2.2 Firmware Menu"
 echo "===================================================================================================="
-echo "   Firmware 3.0 Menu v4 Firmware with 8 Cores unlocked and ACPI Fix each with it's own On/Off Toggle. "
+echo "  All profiles deploy: MeiMeiDXE v2.1, Persistent 8-Core Unlocking, and ACPI Toggles"
 echo "===================================================================================================="
-echo " [menu 01] - MeiMeiDXE v2.1 - No Logo, Permanent 8 Cores unlocked / ACPI Fix        "
-echo " [menu 02] - MeiMeiDXE v2.1 - Bazzite Logo, Permanent 8 Cores unlocked / ACPI Fix         "
-echo " [menu 03] - MeiMeiDXE v2.1 - Steam Logo, Permanent 8 Cores unlocked / ACPI Fix        "
-echo " [menu 04] - MeiMeiDXE v2.1 - Steam XL Logo, Permanent 8 Cores unlocked / ACPI Fix        "
-echo " [menu 05] - MeiMeiDXE v2.1 - CachyOS Logo, Permanent 8 Cores unlocked / ACPI Fix         "
-echo " [menu 06] - MeiMeiDXE v2.1 - Steam Name Logo, Permanent 8 Cores unlocked / ACPI Fix         "
-echo " [menu 07] - MeiMeiDXE v2.1 - AMD Logo, Permanent 8 Cores unlocked / ACPI Fix         "
-echo " [menu 08] - MeiMeiDXE v2.1 - AMD Pure Whit Logo, Permanent 8 Cores unlocked / ACPI Fix      "
-echo " [menu 09] - MeiMeiDXE v2.1 - SteamOS BlackOutCapsule, Permanent 8 Cores unlocked / ACPI Fix "
-echo " [menu 10] - MeiMeiDXE v2.1 - SteamOS BlackOutCapsule.2, Permanent 8 Cores unlocked / ACPI Fix "
-echo " [menu 11] - MeiMeiDXE v2.1 - Steam Name Glass Bubble, Permanent 8 Cores unlocked / ACPI Fix "
-echo " [menu 12] - MeiMeiDXE v2.1 - Steam Name Frost Bubble, Permanent 8 Cores unlocked / ACPI Fix "
-echo " [menu 13] - MeiMeiDXE v2.1 - Steam Logo + Steam Name, Permanent 8 Cores unlocked / ACPI Fix "
-echo " [menu 14] - MeiMeiDXE v2.1 - BC250 Logo (Pure White), Permanent 8 Cores unlocked / ACPI Fix "
-echo " [menu 0f] - Firmware Backup (Always backup your Firmware First!)            "
-echo " [menu fr] - Recover from Firmware Backup (Make sure you backup first before making any changes!)"
-echo " [menu 0e] - Exit to Bios] - [menu 0r to Reboot]  - [menu 0s to Shutdown]           "
+echo " "
+echo " FIRMWARE FLASH CHOICES: "
+echo "  [menu 01]  Disable Boot Splash Logo      [menu 08]  AMD Logo (Monochrome White) "
+echo "  [menu 02]  Bazzite OS Logo               [menu 09]  SteamOS BlackOutCapsule v1 "
+echo "  [menu 03]  Steam Standard Logo           [menu 10]  SteamOS BlackOutCapsule v2 "
+echo "  [menu 04]  Steam XL Scaling Logo         [menu 11]  Steam Text (Glass Bubble Effect) "
+echo "  [menu 05]  CachyOS Logo                  [menu 12]  Steam Text (Frost Bubble Effect) "
+echo "  [menu 06]  Steam Graphic Wordmark        [menu 13]  Steam Standard Logo + Wordmark"
+echo "  [menu 07]  AMD Standard Logo             [menu 14]  BC250 Logo (Monochrome White) "
+echo " "
+echo " UTILITIES & SYSTEM:"
+echo "  [menu 0f]  Export Current ROM Backup     [menu fr]  Restore Existing ROM Backup "
+echo " "
+echo "  [menu bios] Exit to Setup Utility   /   [menu 0r] System Cold Reset   /   [menu 0s] ACPI Shutdown "
+echo " "
 echo "===================================================================================================="
-echo " Usage: menu + [option] Examples: Type 'menu 01' for No Logo, Type 'menu 02' for Bazzite Logo, etc. [ 0 = Zero ]  "
+echo "Syntax: Enter command identifier (e.g., 'menu 01' to flash target image). Note: [ 0 = Numeric Zero ]"
 echo "===================================================================================================="
 echo " "
 goto end_menu
 
+
 :MeiMeiDXE
-cls
+cls 7 1
 echo -b " +****************************************************************************+"
 echo -b " **               (WARNING) Flash Firmware at your own RISK!                 **"
 echo -b " **       Welcome to MeiMeiDXE-v2.1 No Logo 8 Cores unlocked / ACPI Fix	  **"
@@ -131,7 +130,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-Bazzite
-cls
+cls 7 1
 echo -b " +**********************************************************************************+"
 echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
 echo -b " **     Welcome to MeiMeiDXE-v2.1 BazziteOS Logo 8 Cores unlocked / ACPI Fix       **"
@@ -149,7 +148,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-Steam.M
-cls
+cls 7 1
 echo -b " +**********************************************************************************+"
 echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
 echo -b " **     Welcome to MeiMeiDXE-v2.1 SteamOS Logo 8 Cores unlocked / ACPI Fix         **"
@@ -168,7 +167,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-Steam.XL
-cls
+cls 7 1
 echo -b " +*************************************************************************************+"
 echo -b " **                 (WARNING) Flash Firmware at your own RISK!                        **"
 echo -b " **     Welcome to MeiMeiDXE-v2.1 SteamOS X-Large Logo 8 Cores unlocked / ACPI Fix    **"
@@ -187,7 +186,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-CachyOS
-cls
+cls 7 1
 echo -b " +**********************************************************************************+"
 echo -b " **                  (WARNING) Flash Firmware at your own RISK!                    **"
 echo -b " **        Welcome to MeiMeiDXE-v2.1 CachyOS Logo 8 Cores unlocked / ACPI Fix      **"
@@ -206,7 +205,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-SteamOS
-cls
+cls 7 1
 echo -b " +***************************************************************************************+"
 echo -b " **                    (WARNING) Flash Firmware at your own RISK!                       **"
 echo -b " **        Welcome to MeiMeiDXE-v2.1 SteamOS Name Logo 8 Cores unlocked / ACPI Fix      **"
@@ -225,7 +224,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-AMD
-cls
+cls 7 1
 echo -b " +***************************************************************************************+"
 echo -b " **                  (WARNING) Flash Firmware at your own RISK!                         **"
 echo -b " **           Welcome to MeiMeiDXE-v2.1 AMD Logo 8 Cores unlocked / ACPI Fix            **"
@@ -244,7 +243,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-AMD.PW
-cls
+cls 7 1
 echo -b " +***************************************************************************************+"
 echo -b " **                   (WARNING) Flash Firmware at your own RISK!                        **"
 echo -b " **       Welcome to MeiMeiDXE-v2.1 AMD Pure White Logo 8 Cores unlocked / ACPI Fix     **"
@@ -263,7 +262,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-SteamOS-BlackOut
-cls
+cls 7 1
 echo -b " +**********************************************************************************************+"
 echo -b " **                     (WARNING) Flash Firmware at your own RISK!                             **"
 echo -b " **        Welcome to MeiMeiDXE-v2.1 SteamOS BlackOutCapsule Logo 8 Cores / ACPI Fix           **"
@@ -282,7 +281,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-SteamOS-BlackOut.2
-cls
+cls 7 1
 echo -b " +**********************************************************************************************+"
 echo -b " **                    (WARNING) Flash Firmware at your own RISK!                              **"
 echo -b " **       Welcome to MeiMeiDXE-v2.1 SteamOS BlackOutCapsule 2 Logo 8 Cores / ACPI Fix          **"
@@ -301,7 +300,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-SteamOS.GB
-cls
+cls 7 1
 echo -b " +**********************************************************************************************+"
 echo -b " **                     (WARNING) Flash Firmware at your own RISK!                             **"
 echo -b " **       Welcome to MeiMeiDXE-v2.1 SteamOS Name Glass Bubble Logo 8 Cores / ACPI Fix          **"
@@ -320,7 +319,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-SteamOS.FST
-cls
+cls 7 1
 echo -b " +**********************************************************************************************+"
 echo -b " **                 (WARNING) Flash Firmware at your own RISK!                                 **"
 echo -b " **    Welcome to MeiMeiDXE-v2.1 SteamOS Name Frost Bubble Logo 8 Cores unlocked / ACPI Fix    **"
@@ -339,7 +338,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-SteamOS.LG+N
-cls
+cls 7 1
 echo -b " +*****************************************************************************************+"
 echo -b " **                  (WARNING) Flash Firmware at your own RISK!                           **"
 echo -b " **       Welcome to MeiMeiDXE-v2.1 SteamOS Logo + Name 8 Cores unlocked / ACPI Fix       **"
@@ -358,7 +357,7 @@ endif
 goto drive_error
 
 :ATARI
-cls
+cls 7 1
 echo -b " +*****************************************************************************************+"
 echo -b " **                  (WARNING) Flash Firmware at your own RISK!                           **"
 echo -b " **           Welcome to MeiMeiDXE-v2.1 ATARI Logo 8 Cores unlocked / ACPI Fix            **"
@@ -377,7 +376,7 @@ endif
 goto drive_error
 
 :WEYLAND
-cls
+cls 7 1
 echo -b " +*****************************************************************************************+"
 echo -b " **                  (WARNING) Flash Firmware at your own RISK!                           **"
 echo -b " **         Welcome to MeiMeiDXE-v2.1 WEYLAND Logo 8 Cores unlocked / ACPI Fix            **"
@@ -396,7 +395,7 @@ endif
 goto drive_error
 
 :BC250
-cls
+cls 7 1
 echo -b " +**********************************************************************************+"
 echo -b " **                   (WARNING) Flash Firmware at your own RISK!                   **"
 echo -b " **         Welcome to MeiMeiDXE-v2.1 BC250 Logo 8 Cores unlocked / ACPI Fix       **"
@@ -414,7 +413,7 @@ endif
 goto drive_error
 
 :MeiMeiDXE-PUNSH
-cls
+cls 7 1
 echo -b " +**********************************************************************************+"
 echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
 echo -b " **         Welcome to MeiMeiDXE-v2.1 PUNSH Logo 8 Cores unlocked / ACPI Fix       **"
@@ -432,7 +431,7 @@ endif
 goto drive_error
 
 :FIRMWARE
-cls
+cls 7 1
 echo "Preparing to backup your current firmware..."
 if exist fs0:\AfuEfix64.efi then
   fs0:
@@ -451,7 +450,7 @@ endif
 goto drive_error
 
 :FIRMWARE-RECOVERY
-cls
+cls 7 1
 echo "Recovering from last good known firmware backup..."
 if exist fs0:\AfuEfix64.efi then
   fs0:\AfuEfix64.efi fs0:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
@@ -466,21 +465,25 @@ endif
 goto drive_error
 
 :post_flash
-echo -b " Firmware update Finished. The system will now shutdown (Press Enter) to continue."
+cls 7 4
+echo -b " Firmware Update Completed, This system will now reboot (Press Enter) to continue."
 pause -q
-goto show_menu
+reset -c
 
 :post_backup
+cls 7 4
 echo -b " Firmware Backup Completed Successfully. Press Enter."
 pause -q
 goto show_menu
 
 :post_recovery
+cls 7 4
 echo -b " Firmware Recovery Finished. Press Enter to return to main menu."
 pause -q
 goto show_menu
 
 :drive_error
+cls 7 4
 echo -b "ERROR: AfuEfix64.efi was not detected on fs0: or fs1:."
 echo -b "Check USB file placement."
 pause
