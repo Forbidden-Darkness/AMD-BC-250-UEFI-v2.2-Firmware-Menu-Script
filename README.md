@@ -68,10 +68,17 @@ systemctl reboot --firmware-setup
   ![SteamOS Frost](https://github.com/user-attachments/assets/22258389-6170-41ba-9849-2404c4f6d12c)
 * **BC250 Logo (Monochrome White)**  
   ![BC250 Logo](https://github.com/user-attachments/assets/57cbb3b7-09b0-4dc6-93c7-20a379172bea)
-* **ATARI Logo** (`release-0.2.2`)  
+
+<details>
+<summary><b>Hidden Bonus Logos</b> (<code>release-0.2.2</code>)</summary>
+<br>
+
+* **ATARI Logo**  
   ![BC-250-ATARI](https://github.com/user-attachments/assets/677efaa2-c8fa-4ce8-b8f3-80c31044f52d)
-* **Weyland Logo** (`release-0.2.2`)  
+* **Weyland Logo**  
   ![BC-250-Weyland](https://github.com/user-attachments/assets/b922d910-adab-4e9d-81fd-bb9ba45f3a57)
+
+</details>
 
 ---
 
@@ -79,6 +86,9 @@ systemctl reboot --firmware-setup
 > [!NOTE]
 > The following logos and screenshots are **not** included in any current public release.
 
+<details>
+<br>
+  
 * **Bulbasaur Concept**  
   ![Bulbasaur](https://github.com/user-attachments/assets/9237b5ff-961f-475c-9197-39ba1c46fb11)
 * **Sylveon Concept**  
