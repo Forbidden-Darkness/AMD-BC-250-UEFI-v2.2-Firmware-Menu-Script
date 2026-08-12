@@ -21,8 +21,7 @@ systemctl reboot --firmware-setup
 
 | Menu Preview 1 | Menu Preview 2 | Menu Preview 3 |
 | :---: | :---: | :---: |
-| ![Menu1](https://github.com/user-attachments/assets/44bfcd28-13f7-461c-84f4-bc2266ef1354) | ![Menu2](https://github.com/user-attachments/assets/2bd19cef-ee10-4cdb-9d17-59f331e51818)>
-) | ![Menu3](https://github.com/user-attachments/assets/140e7997-71f5-40bd-b611-3bc3860a55f9) |
+| ![Menu1](https://github.com/user-attachments/assets/44bfcd28-13f7-461c-84f4-bc2266ef1354) | ![Menu2](https://github.com/user-attachments/assets/2bd19cef-ee10-4cdb-9d17-59f331e51818) | ![Menu3](https://github.com/user-attachments/assets/140e7997-71f5-40bd-b611-3bc3860a55f9) |
 
 | Menu Preview 4 | Menu Preview 5 | BIOS Screen 1 |
 | :---: | :---: | :---: |
