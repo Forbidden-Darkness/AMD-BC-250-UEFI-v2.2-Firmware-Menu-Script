@@ -64,7 +64,7 @@ endif
 if "%1" == "fr" then
   goto FIRMWARE-RECOVERY
 endif
-if "%1" == "0e" then
+if "%1" == "bios" then
   goto EXIT
 endif
 if "%1" == "0r" then
