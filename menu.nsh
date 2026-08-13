@@ -1,4 +1,5 @@
 @echo -off
+mode 240 56
 cls
 
 # Check if an argument was provided. If empty, show the menu.
