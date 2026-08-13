@@ -90,22 +90,22 @@ echo "==========================================================================
 echo "  All profiles deploy: MeiMeiDXE v2.1, Persistent 8-Core Unlocking, and ACPI Toggles"
 echo "===================================================================================================="
 echo " "
-echo " FIRMWARE FLASH CHOICES: "
-echo "  [menu 01]  Disable Boot Splash Logo      [menu 08]  AMD Logo (Monochrome White) "
-echo "  [menu 02]  Bazzite OS Logo               [menu 09]  SteamOS BlackOutCapsule v1 "
-echo "  [menu 03]  Steam Standard Logo           [menu 10]  SteamOS BlackOutCapsule v2 "
-echo "  [menu 04]  Steam XL Scaling Logo         [menu 11]  Steam Text (Glass Bubble Effect) "
-echo "  [menu 05]  CachyOS Logo                  [menu 12]  Steam Text (Frost Bubble Effect) "
-echo "  [menu 06]  Steam Graphic Wordmark        [menu 13]  Steam Standard Logo + Wordmark"
-echo "  [menu 07]  AMD Standard Logo             [menu 14]  BC250 Logo (Monochrome White) "
+echo "  FIRMWARE FLASH CHOICES: "
+echo "   [menu 01]  Disable Boot Splash Logo      [menu 08]  AMD Logo (Monochrome White) "
+echo "   [menu 02]  Bazzite OS Logo               [menu 09]  SteamOS BlackOutCapsule v1 "
+echo "   [menu 03]  Steam Standard Logo           [menu 10]  SteamOS BlackOutCapsule v2 "
+echo "   [menu 04]  Steam XL Scaling Logo         [menu 11]  Steam Text (Glass Bubble Effect) "
+echo "   [menu 05]  CachyOS Logo                  [menu 12]  Steam Text (Frost Bubble Effect) "
+echo "   [menu 06]  Steam Graphic Wordmark        [menu 13]  Steam Standard Logo + Wordmark"
+echo "   [menu 07]  AMD Standard Logo             [menu 14]  BC250 Logo (Monochrome White) "
 echo " "
-echo " UTILITIES & SYSTEM:"
-echo "  [menu 0f]  Export Current ROM Backup     [menu fr]  Restore Existing ROM Backup "
+echo "  UTILITIES & SYSTEM:"
+echo "   [menu 0f]  Export Current ROM Backup     [menu fr]  Restore Existing ROM Backup "
 echo " "
-echo "  [menu bios] Exit to Setup Utility   /   [menu 0r] System Cold Reset   /   [menu 0s] ACPI Shutdown "
+echo "   [menu bios] Exit to Setup Utility   /   [menu 0r] System Cold Reset   /   [menu 0s] ACPI Shutdown "
 echo " "
 echo "===================================================================================================="
-echo "Syntax: Enter command identifier (e.g., 'menu 01' to flash target image). Note: [ 0 = Numeric Zero ]"
+echo " Syntax: Enter command identifier (e.g., 'menu 01' to flash target image). Note: [ 0 = Numeric Zero ] "
 echo "===================================================================================================="
 echo " "
 goto end_menu
@@ -113,18 +113,18 @@ goto end_menu
 
 :MeiMeiDXE
 cls 7 1
-echo -b " +****************************************************************************+"
-echo -b " **               (WARNING) Flash Firmware at your own RISK!                 **"
-echo -b " **       Welcome to MeiMeiDXE-v2.1 No Logo 8 Cores unlocked / ACPI Fix	  **"
-echo -b " +****************************************************************************+"
+echo -b " +************************************************************************************+"
+echo -b " **                    (WARNING) Flash Firmware at your own RISK!                    **"
+echo -b " **  Welcome to MeiMeiDXE-v2.1 Disable Boot Splash Logo 8 Cores unlocked / ACPI Fix  **"
+echo -b " +************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4 /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4 /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4 /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4 /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -133,16 +133,16 @@ goto drive_error
 :MeiMeiDXE-Bazzite
 cls 7 1
 echo -b " +**********************************************************************************+"
-echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
-echo -b " **     Welcome to MeiMeiDXE-v2.1 BazziteOS Logo 8 Cores unlocked / ACPI Fix       **"
+echo -b " **                   (WARNING) Flash Firmware at your own RISK!                   **"
+echo -b " **     Welcome to MeiMeiDXE-v2.1 Bazzite OS Logo 8 Cores unlocked / ACPI Fix      **"
 echo -b " +**********************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BazziteOS /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BazziteOS /P /B /N /K /RLC:E /CLRCFG
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BazziteOS /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BazziteOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -151,17 +151,17 @@ goto drive_error
 :MeiMeiDXE-Steam.M
 cls 7 1
 echo -b " +**********************************************************************************+"
-echo -b " **                 (WARNING) Flash Firmware at your own RISK!                     **"
-echo -b " **     Welcome to MeiMeiDXE-v2.1 SteamOS Logo 8 Cores unlocked / ACPI Fix         **"
+echo -b " **                   (WARNING) Flash Firmware at your own RISK!                   **"
+echo -b " **   Welcome to MeiMeiDXE-v2.1 Steam Standard Logo 8 Cores unlocked / ACPI Fix    **"
 echo -b " +**********************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.M /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.M /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.M /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.M /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -170,17 +170,17 @@ goto drive_error
 :MeiMeiDXE-Steam.XL
 cls 7 1
 echo -b " +*************************************************************************************+"
-echo -b " **                 (WARNING) Flash Firmware at your own RISK!                        **"
-echo -b " **     Welcome to MeiMeiDXE-v2.1 SteamOS X-Large Logo 8 Cores unlocked / ACPI Fix    **"
+echo -b " **                    (WARNING) Flash Firmware at your own RISK!                     **"
+echo -b " **    Welcome to MeiMeiDXE-v2.1 Steam XL Scaling Logo 8 Cores unlocked / ACPI Fix    **"
 echo -b " +*************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.XL /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.XL /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.XL /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS.XL /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -189,17 +189,17 @@ goto drive_error
 :MeiMeiDXE-CachyOS
 cls 7 1
 echo -b " +**********************************************************************************+"
-echo -b " **                  (WARNING) Flash Firmware at your own RISK!                    **"
+echo -b " **                   (WARNING) Flash Firmware at your own RISK!                   **"
 echo -b " **        Welcome to MeiMeiDXE-v2.1 CachyOS Logo 8 Cores unlocked / ACPI Fix      **"
 echo -b " +**********************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-CachyOS /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-CachyOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-CachyOS /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-CachyOS /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -208,17 +208,17 @@ goto drive_error
 :MeiMeiDXE-SteamOS
 cls 7 1
 echo -b " +***************************************************************************************+"
-echo -b " **                    (WARNING) Flash Firmware at your own RISK!                       **"
-echo -b " **        Welcome to MeiMeiDXE-v2.1 SteamOS Name Logo 8 Cores unlocked / ACPI Fix      **"
+echo -b " **                     (WARNING) Flash Firmware at your own RISK!                      **"
+echo -b " **    Welcome to MeiMeiDXE-v2.1 Steam Graphic Wordmark 8 Cores unlocked / ACPI Fix     **"
 echo -b " +***************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -227,17 +227,17 @@ goto drive_error
 :MeiMeiDXE-AMD
 cls 7 1
 echo -b " +***************************************************************************************+"
-echo -b " **                  (WARNING) Flash Firmware at your own RISK!                         **"
-echo -b " **           Welcome to MeiMeiDXE-v2.1 AMD Logo 8 Cores unlocked / ACPI Fix            **"
+echo -b " **                     (WARNING) Flash Firmware at your own RISK!                      **"
+echo -b " **       Welcome to MeiMeiDXE-v2.1 AMD Standard Logo 8 Cores unlocked / ACPI Fix       **"
 echo -b " +***************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -245,18 +245,18 @@ goto drive_error
 
 :MeiMeiDXE-AMD.PW
 cls 7 1
-echo -b " +***************************************************************************************+"
-echo -b " **                   (WARNING) Flash Firmware at your own RISK!                        **"
-echo -b " **       Welcome to MeiMeiDXE-v2.1 AMD Pure White Logo 8 Cores unlocked / ACPI Fix     **"
-echo -b " +***************************************************************************************+"
+echo -b " +*******************************************************************************************+"
+echo -b " **                       (WARNING) Flash Firmware at your own RISK!                        **"
+echo -b " **    Welcome to MeiMeiDXE-v2.1 AMD Logo (Monochrome White) 8 Cores unlocked / ACPI Fix    **"
+echo -b " +*******************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD.PW /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD.PW /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD.PW /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-AMD.PW /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -264,18 +264,18 @@ goto drive_error
 
 :MeiMeiDXE-SteamOS-BlackOut
 cls 7 1
-echo -b " +**********************************************************************************************+"
-echo -b " **                     (WARNING) Flash Firmware at your own RISK!                             **"
-echo -b " **        Welcome to MeiMeiDXE-v2.1 SteamOS BlackOutCapsule Logo 8 Cores / ACPI Fix           **"
-echo -b " +**********************************************************************************************+"
+echo -b " +*****************************************************************************************+"
+echo -b " **                      (WARNING) Flash Firmware at your own RISK!                       **"
+echo -b " **        Welcome to MeiMeiDXE-v2.1 SteamOS BlackOutCapsule v1 8 Cores / ACPI Fix        **"
+echo -b " +*****************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -283,18 +283,18 @@ goto drive_error
 
 :MeiMeiDXE-SteamOS-BlackOut.2
 cls 7 1
-echo -b " +**********************************************************************************************+"
-echo -b " **                    (WARNING) Flash Firmware at your own RISK!                              **"
-echo -b " **       Welcome to MeiMeiDXE-v2.1 SteamOS BlackOutCapsule 2 Logo 8 Cores / ACPI Fix          **"
-echo -b " +**********************************************************************************************+"
+echo -b " +***************************************************************************************+"
+echo -b " **                     (WARNING) Flash Firmware at your own RISK!                      **"
+echo -b " **       Welcome to MeiMeiDXE-v2.1 SteamOS BlackOutCapsule v2 8 Cores / ACPI Fix       **"
+echo -b " +***************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut.2 /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut.2 /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut.2 /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS-BlackOut.2 /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -302,18 +302,18 @@ goto drive_error
 
 :MeiMeiDXE-SteamOS.GB
 cls 7 1
-echo -b " +**********************************************************************************************+"
-echo -b " **                     (WARNING) Flash Firmware at your own RISK!                             **"
-echo -b " **       Welcome to MeiMeiDXE-v2.1 SteamOS Name Glass Bubble Logo 8 Cores / ACPI Fix          **"
-echo -b " +**********************************************************************************************+"
+echo -b " +*********************************************************************************************+"
+echo -b " **                        (WARNING) Flash Firmware at your own RISK!                         **"
+echo -b " **       Welcome to MeiMeiDXE-v2.1 Steam Text (Glass Bubble Effect) 8 Cores / ACPI Fix       **"
+echo -b " +*********************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.GB /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.GB /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.GB /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.GB /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -321,18 +321,18 @@ goto drive_error
 
 :MeiMeiDXE-SteamOS.FST
 cls 7 1
-echo -b " +**********************************************************************************************+"
-echo -b " **                 (WARNING) Flash Firmware at your own RISK!                                 **"
-echo -b " **    Welcome to MeiMeiDXE-v2.1 SteamOS Name Frost Bubble Logo 8 Cores unlocked / ACPI Fix    **"
-echo -b " +**********************************************************************************************+"
+echo -b " +************************************************************************************************+"
+echo -b " **                          (WARNING) Flash Firmware at your own RISK!                          **"
+echo -b " **    Welcome to MeiMeiDXE-v2.1 Steam Text (Frost Bubble Effect) 8 Cores unlocked / ACPI Fix    **"
+echo -b " +************************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.FST /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.FST /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.FST /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_Name.FST /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -340,18 +340,36 @@ goto drive_error
 
 :MeiMeiDXE-SteamOS.LG+N
 cls 7 1
-echo -b " +*****************************************************************************************+"
-echo -b " **                  (WARNING) Flash Firmware at your own RISK!                           **"
-echo -b " **       Welcome to MeiMeiDXE-v2.1 SteamOS Logo + Name 8 Cores unlocked / ACPI Fix       **"
-echo -b " +*****************************************************************************************+"
+echo -b " +****************************************************************************************************+"
+echo -b " **                            (WARNING) Flash Firmware at your own RISK!                            **"
+echo -b " **       Welcome to MeiMeiDXE-v2.1 Steam Standard Logo + Wordmark 8 Cores unlocked / ACPI Fix       **"
+echo -b " +****************************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_LG+N /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_LG+N /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_LG+N /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-SteamOS_LG+N /P /B /N /K /RLC:E /CLRCFG
+  stall 5000000
+  goto post_flash
+endif
+goto drive_error
+
+:BC250
+cls 7 1
+echo -b " +**********************************************************************************************+"
+echo -b " **                         (WARNING) Flash Firmware at your own RISK!                         **"
+echo -b " **    Welcome to MeiMeiDXE-v2.1 BC250 Logo (Monochrome White) 8 Cores unlocked / ACPI Fix     **"
+echo -b " +**********************************************************************************************+"
+pause
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BC250 /P /B /N /K /RLC:E /CLRCFG
+  goto post_flash
+endif
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BC250 /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -364,13 +382,13 @@ echo -b " **                  (WARNING) Flash Firmware at your own RISK!        
 echo -b " **           Welcome to MeiMeiDXE-v2.1 ATARI Logo 8 Cores unlocked / ACPI Fix            **"
 echo -b " +*****************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Atari /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Atari /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Atari /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Atari /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -383,31 +401,13 @@ echo -b " **                  (WARNING) Flash Firmware at your own RISK!        
 echo -b " **         Welcome to MeiMeiDXE-v2.1 WEYLAND Logo 8 Cores unlocked / ACPI Fix            **"
 echo -b " +*****************************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Weyland /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Weyland /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Weyland /P /B /N /K /RLC:E /CLRCFG
-  stall 5000000
-  goto post_flash
-endif
-goto drive_error
-
-:BC250
-cls 7 1
-echo -b " +**********************************************************************************+"
-echo -b " **                   (WARNING) Flash Firmware at your own RISK!                   **"
-echo -b " **         Welcome to MeiMeiDXE-v2.1 BC250 Logo 8 Cores unlocked / ACPI Fix       **"
-echo -b " +**********************************************************************************+"
-pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BC250 /P /B /N /K /RLC:E /CLRCFG
-  goto post_flash
-endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-BC250 /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-Weyland /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -420,12 +420,12 @@ echo -b " **                 (WARNING) Flash Firmware at your own RISK!         
 echo -b " **         Welcome to MeiMeiDXE-v2.1 PUNSH Logo 8 Cores unlocked / ACPI Fix       **"
 echo -b " +**********************************************************************************+"
 pause
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-PUNSH /P /B /N /K /RLC:E /CLRCFG
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-PUNSH /P /B /N /K /RLC:E /CLRCFG
   goto post_flash
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-PUNSH /P /B /N /K /RLC:E /CLRCFG
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware\BC250_3.00_MeiMeiDXEv2.1-TA-v4-PUNSH /P /B /N /K /RLC:E /CLRCFG
   stall 5000000
   goto post_flash
 endif
@@ -434,17 +434,17 @@ goto drive_error
 :FIRMWARE
 cls 7 1
 echo "Preparing to backup your current firmware..."
-if exist fs0:\AfuEfix64.efi then
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
   fs0:
   mkdir \Firmware_Backup
-  fs0:\AfuEfix64.efi fs0:\Firmware_Backup\bc250-backup.rom /O
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware_Backup\bc250-backup.rom /O
   stall 5000000
   goto post_backup
 endif
-if exist fs1:\AfuEfix64.efi then
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
   fs1:
   mkdir \Firmware_Backup
-  fs1:\AfuEfix64.efi fs1:\Firmware_Backup\bc250-backup.rom /O
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware_Backup\bc250-backup.rom /O
   stall 5000000
   goto post_backup
 endif
@@ -453,13 +453,13 @@ goto drive_error
 :FIRMWARE-RECOVERY
 cls 7 1
 echo "Recovering from last good known firmware backup..."
-if exist fs0:\AfuEfix64.efi then
-  fs0:\AfuEfix64.efi fs0:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
+if exist fs0:\EFI\BOOT\AfuEfix64.efi then
+  fs0:\EFI\BOOT\AfuEfix64.efi fs0:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_recovery
 endif
-if exist fs1:\AfuEfix64.efi then
-  fs1:\AfuEfix64.efi fs1:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
+if exist fs1:\EFI\BOOT\AfuEfix64.efi then
+  fs1:\EFI\BOOT\AfuEfix64.efi fs1:\Firmware_Backup\bc250-backup.rom /P /N /B /K /RLC:E
   stall 5000000
   goto post_recovery
 endif
