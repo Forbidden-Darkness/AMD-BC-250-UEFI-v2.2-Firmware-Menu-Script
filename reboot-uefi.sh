@@ -64,6 +64,111 @@ if [[ "$(basename "$CURRENT_DIR")" == "Reboot-to-UEFI" ]]; then
     IS_INSTALLED=true
 fi
 
+# Function to handle extracting 7z archive to USB root
+extract_7z_to_usb() {
+    echo ""
+    echo -e "${YELLOW}==========================================${NC}"
+    echo -e "${YELLOW}      EXTRACT 7Z ARCHIVE TO USB ROOT      ${NC}"
+    echo -e "${YELLOW}==========================================${NC}"
+
+    # Check for 7z tools
+    SEVENZIP_BIN=""
+    if command -v 7z &>/dev/null; then
+        SEVENZIP_BIN="7z"
+    elif command -v 7za &>/dev/null; then
+        SEVENZIP_BIN="7za"
+    else
+        echo -e "${BIRed}[-] Error: '7z' or '7za' command not found. Please install p7zip/7-zip.${NC}"
+        read -rp "Press Enter to return to main menu..."
+        return 1
+    fi
+
+    # Find .7z files in CURRENT_DIR or pwd
+    mapfile -t ARCHIVES < <(find "$CURRENT_DIR" -maxdepth 1 -type f -iname "*.7z" 2>/dev/null)
+
+    if [[ ${#ARCHIVES[@]} -eq 0 ]]; then
+        # Fallback search current working directory
+        mapfile -t ARCHIVES < <(find "." -maxdepth 1 -type f -iname "*.7z" 2>/dev/null)
+    fi
+
+    if [[ ${#ARCHIVES[@]} -eq 0 ]]; then
+        echo -e "${BIRed}[-] No .7z files found in current directory.${NC}"
+        read -rp "Press Enter to return to main menu..."
+        return 1
+    fi
+
+    SELECTED_ARCHIVE=""
+    if [[ ${#ARCHIVES[@]} -eq 1 ]]; then
+        SELECTED_ARCHIVE="${ARCHIVES[0]}"
+        echo -e "${BIGreen}[+] Found archive: $(basename "$SELECTED_ARCHIVE")${NC}"
+    else
+        echo -e "${YELLOW}Multiple .7z files found. Select one:${NC}"
+        for i in "${!ARCHIVES[@]}"; do
+            echo -e "  ${CYAN}$((i+1)))${NC} $(basename "${ARCHIVES[$i]}")"
+        done
+        read -rp $'\e[1;33mSelect archive number: \e[0m' arch_choice
+        if [[ "$arch_choice" =~ ^[0-9]+$ ]] && (( arch_choice >= 1 && arch_choice <= ${#ARCHIVES[@]} )); then
+            SELECTED_ARCHIVE="${ARCHIVES[$((arch_choice-1))]}"
+        else
+            echo "[-] Invalid selection. Returning..."
+            sleep 1
+            return 1
+        fi
+    fi
+
+    echo ""
+    echo -e "${YELLOW}Available Storage Devices (Look for USB drives):${NC}"
+    lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINTS,LABEL | grep -E "sd|nvme|mmcblk"
+    echo ""
+    read -rp $'\e[1;33mEnter target partition device (e.g., sdb1 or sdc1): \e[0m' target_dev
+
+    # Clean input name
+    target_dev=$(echo "$target_dev" | sed 's|/dev/||g')
+
+    if [[ ! -b "/dev/$target_dev" ]]; then
+        echo -e "${BIRed}[-] Invalid device block /dev/$target_dev${NC}"
+        read -rp "Press Enter to return to main menu..."
+        return 1
+    fi
+
+    # Determine Mount Point
+    TARGET_MOUNT=$(lsblk -no MOUNTPOINT "/dev/$target_dev" | head -n 1)
+    TEMP_MOUNTED=false
+
+    if [[ -z "$TARGET_MOUNT" ]]; then
+        TARGET_MOUNT="/mnt/usb_target_root"
+        mkdir -p "$TARGET_MOUNT"
+        echo -e "${YELLOW}[+] Mounting /dev/$target_dev to $TARGET_MOUNT...${NC}"
+        if ! mount "/dev/$target_dev" "$TARGET_MOUNT"; then
+            echo -e "${BIRed}[-] Failed to mount /dev/$target_dev${NC}"
+            read -rp "Press Enter to return to main menu..."
+            return 1
+        fi
+        TEMP_MOUNTED=true
+    fi
+
+    echo ""
+    echo -e "${YELLOW}[!] Confirm extraction of '${SELECTED_ARCHIVE}' to '${TARGET_MOUNT}' (USB Root)${NC}"
+    read -rp $'\e[1;31mAre you sure? (y/N): \e[0m' confirm_ext
+    if [[ "$confirm_ext" =~ ^[Yy]$ ]]; then
+        echo -e "${BIGreen}[+] Extracting files to USB Root...${NC}"
+        "$SEVENZIP_BIN" x "$SELECTED_ARCHIVE" -o"$TARGET_MOUNT" -y
+
+        sync
+        echo -e "${BIGreen}[+] Extraction complete! Changes flushed to USB.${NC}"
+    else
+        echo "[-] Extraction canceled."
+    fi
+
+    # Cleanup temp mount if created
+    if [[ "$TEMP_MOUNTED" == true ]]; then
+        umount "$TARGET_MOUNT"
+        rmdir "$TARGET_MOUNT" 2>/dev/null
+    fi
+
+    read -rp "Press Enter to return to main menu..."
+}
+
 # Function to handle creating shortcuts
 create_shortcuts() {
     echo ""
@@ -195,7 +300,7 @@ remove_shortcuts() {
     esac
 }
 
-# Main loop so returning to menu actually re-displays the main choices
+# Main loop
 while true; do
     clear
     echo -e "${YELLOW}==========================================${NC}"
@@ -204,17 +309,18 @@ while true; do
     echo -e "${YELLOW}1) UEFI Firmware Setup (Reboot to BIOS)${NC}"
     echo -e "${YELLOW}2) EFI Boot Manager One-Time Boot (efibootmgr)${NC}"
     echo -e "${YELLOW}3) Standard Reboot (Interrupt GRUB manually)${NC}"
+    echo -e "${YELLOW}4) Extract Existing .7z File to USB Root${NC}"
 
     if [[ "$IS_INSTALLED" == false ]]; then
-        echo -e "${YELLOW}4) Manage Shortcuts (Create / Remove)${NC}"
-        echo -e "${YELLOW}5) Cancel / Exit${NC}"
+        echo -e "${YELLOW}5) Manage Shortcuts (Create / Remove)${NC}"
+        echo -e "${YELLOW}6) Cancel / Exit${NC}"
         echo -e "${YELLOW}------------------------------------------${NC}"
-        read -rp $'\e[1;33mEnter your choice [1-5]: \e[0m' choice
+        read -rp $'\e[1;33mEnter your choice [1-6]: \e[0m' choice
     else
-        echo -e "${YELLOW}4) Remove Shortcuts${NC}"
-        echo -e "${YELLOW}5) Cancel / Exit${NC}"
+        echo -e "${YELLOW}5) Remove Shortcuts${NC}"
+        echo -e "${YELLOW}6) Cancel / Exit${NC}"
         echo -e "${YELLOW}------------------------------------------${NC}"
-        read -rp $'\e[1;33mEnter your choice [1-5]: \e[0m' choice
+        read -rp $'\e[1;33mEnter your choice [1-6]: \e[0m' choice
     fi
 
     case $choice in
@@ -254,6 +360,9 @@ while true; do
             systemctl reboot
             ;;
         4)
+            extract_7z_to_usb
+            ;;
+        5)
             if [[ "$IS_INSTALLED" == false ]]; then
                 echo ""
                 echo -e "${YELLOW}Shortcut Management:${NC}"
@@ -272,7 +381,7 @@ while true; do
                 remove_shortcuts
             fi
             ;;
-        5)
+        6)
             echo "Exiting..."
             close_terminal
             ;;
