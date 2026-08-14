@@ -4,6 +4,40 @@ An advanced configuration and firmware menu script featuring 8 unlocked cores, A
 
 ---
 
+### USB Preparation & Execution Instructions
+
+1. Download **`reboot-uefi.sh`** and the latest release archive (`*.7z`) directly to the root directory of your USB flash drive.
+2. Open a terminal session in the root directory of your USB drive.
+3. Grant execution permissions to the script and run it with superuser privileges:
+
+```bash
+curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script/releases/download/v0.4.0/reboot-uefi.sh && curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script/releases/download/v0.4.0/release-0.4.1.7z && chmod +x reboot-uefi.sh &&  sudo bash reboot-uefi.sh
+```
+4. Select **Option 4** from the main menu to extract the release archive (`*.7z`) directly to the root directory of your USB flash drive.
+5. Select **Option 2** from the main menu to reboot the system into the Firmware-Menu-Script on the USB flash drive using the one-time NVRAM boot target (`efibootmgr`).
+
+[![Watch the video](assets/[thumbnail.jpg](https://github.com/user-attachments/assets/ca629326-6095-428d-b8d3-64777df2b705))](https://github.com/user-attachments/assets/32d68515-1ba7-4271-ba56-0916500dafa3)
+
+---
+
+### Feature Summary
+
+* **Option 1 (Direct to UEFI/BIOS):** Automatically restarts the system directly into the UEFI/BIOS setup interface via `systemctl reboot --firmware-setup`.
+* **Option 2 (Direct to USB Boot Target):** Initiates a reboot targeting a specific bootable USB drive using `efibootmgr` to set a one-time Non-Volatile RAM (NVRAM) boot target (`--bootnext`).
+* **Option 3 (Standard System Reboot):** Triggers a standard system reboot, allowing the operator to manually intercept the boot sequence and invoke the GRUB menu or motherboard boot selector.
+* **Option 4 (Extract 7z Archive to USB Root):** Interactively scans for `.7z` archives in the execution directory, detects attached storage block devices (`lsblk`), automatically handles temporary mounting, and unpacks the archive directly onto the root filesystem of the target USB partition.
+* **Option 5 (Dynamic Shortcut & Lifecycle Management):** Interactively deploys or purges custom FreeDesktop `.desktop` shortcuts within `~/Desktop` and `~/.local/share/applications/` (Utilities). Automatically synchronizes local desktop databases via `update-desktop-database`, configures elevated execution privileges (`sudo`), and automatically cleans up the target installation directory (`~/Reboot-to-UEFI`) upon shortcut removal.
+
+   ![Option1](https://github.com/user-attachments/assets/35ffa9af-b0ef-4af1-9895-24b96a089afa)
+
+
+
+1. When prompted, select the target UEFI boot entry corresponding to your USB device (e.g., `0002`) and press **Enter**.
+  ![Option3](https://github.com/user-attachments/assets/fd59fe7d-4acd-47e1-bacd-32248d7f27b8)
+2. The system will reboot immediately into the selected UEFI USB target.
+
+---
+
 ## 🚀 Quick Command
 
 To quickly reboot your system straight into the UEFI firmware/BIOS setup from Linux, run:
