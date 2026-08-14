@@ -4,6 +4,11 @@ An advanced configuration and firmware menu script featuring 8 unlocked cores, A
 
 ---
 
+> [!IMPORTANT]
+> **Instructional Video Included**
+> Please refer to the accompanying video demonstration for exact configuration and deployment steps.
+
+
 ### USB Preparation & Execution Instructions
 
 1. Download **`reboot-uefi.sh`** and the latest release archive (`*.7z`) directly to the root directory of your USB flash drive.
