@@ -32,15 +32,17 @@ curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Men
 * **Option 3 (Standard System Reboot):** Triggers a standard system reboot, allowing the operator to manually intercept the boot sequence and invoke the GRUB menu or motherboard boot selector.
 * **Option 4 (Extract 7z Archive to USB Root):** Interactively scans for `.7z` archives in the execution directory, detects attached storage block devices (`lsblk`), automatically handles temporary mounting, and unpacks the archive directly onto the root filesystem of the target USB partition.
 * **Option 5 (Dynamic Shortcut & Lifecycle Management):** Interactively deploys or purges custom FreeDesktop `.desktop` shortcuts within `~/Desktop` and `~/.local/share/applications/` (Utilities). Automatically synchronizes local desktop databases via `update-desktop-database`, configures elevated execution privileges (`sudo`), and automatically cleans up the target installation directory (`~/Reboot-to-UEFI`) upon shortcut removal.
+<br>
 
-   ![Option1](https://github.com/user-attachments/assets/35ffa9af-b0ef-4af1-9895-24b96a089afa)
+1. When prompted, select option **2** for EFI Boot Manager One-Time Boot
 
+  ![Option1](https://github.com/user-attachments/assets/35ffa9af-b0ef-4af1-9895-24b96a089afa)
 
-
-1. When prompted, select the target UEFI boot entry corresponding to your USB device (e.g., `0002`) and press **Enter**.
+2. When prompted, enter the hex number corresponding to your USB device (e.g., `0002`), Confirm your selection and press **Enter**. Wait a few seconds for the script to execute the boot override.
+  
   ![Option3](https://github.com/user-attachments/assets/fd59fe7d-4acd-47e1-bacd-32248d7f27b8)
-2. The system will reboot immediately into the selected UEFI USB target.
 
+3. The system will now reboot immediately into the selected UEFI USB target.
 ---
 
 ## 🚀 Quick Command
