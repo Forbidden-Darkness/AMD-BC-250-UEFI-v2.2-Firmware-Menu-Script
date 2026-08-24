@@ -134,6 +134,28 @@ blink_cursor ""
 echo ""
 type_prompt "  mapping system block registers " 0.03
 blink_cursor ""
+echo ""
+# ==============================================================================
+# 📥 PASTE YOUR NEW PROGRESS BAR ENGINE & PROGRESS STEPS RIGHT HERE:
+# ==============================================================================
+draw_progress_bar() {
+    local duration="$1"
+    local width=30
+    echo -ne "   Processing: ["
+
+    for ((i=1; i<=width; i++)); do
+        local pct=$(( i * 100 / width ))
+        local g_val=$(( 100 + (i * 155 / width) ))
+
+        echo -ne "\033[38;2;0;${g_val};0m█\033[0m"
+        sleep "$(bc -l <<< "$duration / $width")"
+    done
+    echo -e "] Done!"
+}
+
+# Dynamic, theme-matched loading sequences:
+draw_progress_bar 1.5
+echo ""
 
 # Function to handle extracting 7z archive to USB root
 extract_7z_to_usb() {
@@ -507,7 +529,8 @@ create_shortcuts() {
     type_prompt "Enter choice [1-4]: " 0.03
     read -r shortcut_choice
 
-    case "$shortcut_choice" in
+    case $choice in
+
         1|2|3)
             # Create installation directory infrastructure
             mkdir -p "$INSTALL_DIR"
@@ -679,19 +702,28 @@ while true; do
     echo -e "\033[38;2;0;255;0m   3)\033[0m Standard Reboot (Interrupt GRUB manually)"
     echo -e "\033[38;2;0;255;0m   4)\033[0m Extract Existing .7z File to USB Root"
 
-    if [[ "$IS_INSTALLED" == false ]]; then
+        if [[ "$IS_INSTALLED" == false ]]; then
         echo -e "\033[38;2;0;255;0m   5)\033[0m Manage Shortcuts (Create / Remove)"
+        echo -e "\033[38;2;0;255;0m   r)\033[0m Reload Menu Interface"
         echo -e "\033[38;2;0;255;0m   6)\033[0m Cancel / Exit"
-        echo -e "\033[38;2;0;255;0m  ────────────────────────────────────────────────────────────\033[0m"
-        type_prompt "  Select an option [1-6]: " 0.03
-        read -r choice
+        echo -e "  ────────────────────────────────────────────────────────────"
+        type_prompt "  Select an option [1-6, r]: " 0.03
+        # FIX: Added -n 1 -s parameters to enable instant single-keystroke execution
+        choice=""
+        read -n 1 -s choice || true
+        echo "" # Keeps your terminal margin layout aligned cleanly
     else
         echo -e "\033[38;2;0;255;0m   5)\033[0m Remove Shortcuts"
+        echo -e "\033[38;2;0;255;0m   r)\033[0m Reload Menu Interface"
         echo -e "\033[38;2;0;255;0m   6)\033[0m Cancel / Exit"
-        echo -e "\033[38;2;0;255;0m  ────────────────────────────────────────────────────────────\033[0m"
-        type_prompt "  Select an option [1-6]: " 0.03
-        read -r choice
+        echo -e "  ────────────────────────────────────────────────────────────"
+        type_prompt "  Select an option [1-6, r]: " 0.03
+        # FIX: Added -n 1 -s parameters here as well
+        choice=""
+        read -n 1 -s choice || true
+        echo "" # Keeps your terminal margin layout aligned cleanly
     fi
+
 
 
     case $choice in
@@ -723,9 +755,13 @@ while true; do
 
                 # FIX: Stripped the manual color string from quotes to prevent double-color text logs
                 type_prompt "Enter choice [1-3]: " 0.03
-                read -r manage_choice
+                # FIX: Added -n 1 -s parameters here as well
+                choice=""
+                read -n 1 -s choice || true
+                echo "" # Keeps your terminal margin layout aligned cleanly
 
-                case "$manage_choice" in
+
+                case $choice in
                     1) create_shortcuts ;;
                     2) remove_shortcuts ;;
                     3) echo "[-] Returning to Main Menu..."; sleep 1 ;;
@@ -734,6 +770,14 @@ while true; do
             else
                 remove_shortcuts
             fi
+            ;;
+        # ======================================================================
+        # 📥 PASTE THIS RE-EXECUTION BLOCK RIGHT HERE:
+        # ==============================================================================
+        r)
+            echo -e "\033[38;2;0;255;0m  [+] Re-initializing core firmware tables...\033[0m"
+            sleep 0.5
+            exec bash "$CURRENT_SCRIPT_PATH" "$@"
             ;;
 
         6)
