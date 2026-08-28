@@ -16,7 +16,7 @@ An advanced configuration and firmware menu script featuring 8 unlocked cores, A
 3. Grant execution permissions to the script and run it with superuser privileges:
 
 ```bash
-curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script/releases/download/v0.4.0/reboot-uefi.sh && curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script/releases/download/v0.4.0/release-0.4.1.7z && chmod +x reboot-uefi.sh &&  sudo bash reboot-uefi.sh
+curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script/releases/download/v0.5.0/reboot-uefi.sh && curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script/releases/download/v0.5.0/release-0.5.0.7z && chmod +x reboot-uefi.sh && sudo bash reboot-uefi.sh
 ```
 4. Select **Option 4** from the main menu to extract the release archive (`*.7z`) directly to the root directory of your USB flash drive.
 5. Select **Option 2** from the main menu to reboot the system into the Firmware-Menu-Script on the USB flash drive using the one-time NVRAM boot target (`efibootmgr`).
