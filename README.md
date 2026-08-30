@@ -23,7 +23,7 @@ curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Men
 
 [![Watch the video](assets/[thumbnail.jpg](https://github.com/user-attachments/assets/ca629326-6095-428d-b8d3-64777df2b705))](https://github.com/user-attachments/assets/ed1db2b0-d0ef-4830-8871-3d077b1fc12e)
 
-#[![Watch the video](assets/[thumbnail.jpg](https://github.com/user-attachments/assets/ca629326-6095-428d-b8d3-64777df2b705))](https://github.com/user-attachments/assets/32d68515-1ba7-4271-ba56-0916500dafa3)
+<!--[![Watch the video](assets/[thumbnail.jpg](https://github.com/user-attachments/assets/ca629326-6095-428d-b8d3-64777df2b705))](https://github.com/user-attachments/assets/32d68515-1ba7-4271-ba56-0916500dafa3)-->
 
 ---
 
