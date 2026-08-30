@@ -21,7 +21,8 @@ curl -LO https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Men
 4. Select **Option 4** from the main menu to extract the release archive (`*.7z`) directly to the root directory of your USB flash drive.
 5. Select **Option 2** from the main menu to reboot the system into the Firmware-Menu-Script on the USB flash drive using the one-time NVRAM boot target (`efibootmgr`).
 
-[![Watch the video](assets/[thumbnail.jpg](https://github.com/user-attachments/assets/ca629326-6095-428d-b8d3-64777df2b705))]([https://github.com/user-attachments/assets/32d68515-1ba7-4271-ba56-0916500dafa3](https://github.com/user-attachments/assets/ed1db2b0-d0ef-4830-8871-3d077b1fc12e)
+[![Watch the video](assets/[thumbnail.jpg](https://github.com/user-attachments/assets/ca629326-6095-428d-b8d3-64777df2b705))](https://github.com/user-attachments/assets/ed1db2b0-d0ef-4830-8871-3d077b1fc12e)
+
 #[![Watch the video](assets/[thumbnail.jpg](https://github.com/user-attachments/assets/ca629326-6095-428d-b8d3-64777df2b705))](https://github.com/user-attachments/assets/32d68515-1ba7-4271-ba56-0916500dafa3)
 
 ---
